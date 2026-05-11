@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
@@ -10,7 +11,16 @@ use Inertia\Inertia;
 //     return view('welcome');
 // });
 Route::get('/', function () {
-    return Inertia::render('Home');
+    $featuredPosts = \App\Models\Post::where('is_featured', true)
+        ->where('status', true)
+        ->with('category')
+        ->latest()
+        ->take(4)
+        ->get();
+
+    return Inertia::render('Home', [
+        'featuredPosts' => $featuredPosts,
+    ]);
 })->name('home');
 
 Route::get('/about', function () {
@@ -20,22 +30,6 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
-
-Route::get('/single-drama', function () {
-    return Inertia::render('Works/SingleDrama');
-})->name('works.single-drama');
-
-Route::get('/television-series', function () {
-    return Inertia::render('Works/TelevisionSeries');
-})->name('works.tv-series');
-
-Route::get('/music', function () {
-    return Inertia::render('Works/Music');
-})->name('works.music');
-
-Route::get('/cinema', function () {
-    return Inertia::render('Works/Cinema');
-})->name('works.cinema');
 
 // Auth Routes
 Route::get('/login', [\App\Http\Controllers\AuthController::class, 'showLogin'])->name('login')->middleware('guest');
@@ -63,4 +57,39 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::put('users/{user}/roles', [UserRoleController::class, 'update'])->name('users.roles.update');
     Route::post('users/{user}/assign-role', [UserRoleController::class, 'assignRole'])->name('users.roles.assign');
     Route::post('users/{user}/remove-role', [UserRoleController::class, 'removeRole'])->name('users.roles.remove');
+
+    // Categories CRUD
+    Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+
+    // Posts CRUD
+    Route::resource('posts', PostController::class);
+
+    // Toggle featured status
+    Route::post('posts/{post}/toggle-featured', [PostController::class, 'toggleFeatured'])->name('posts.toggle-featured');
 });
+
+// Dynamic Category Route (Placed at the very end to not override actual routes like /login or /admin)
+Route::get('/{slug}', function ($slug) {
+    $category = \App\Models\Category::where('slug', $slug)->where('status', true)->firstOrFail();
+
+    $posts = \App\Models\Post::where('category_id', $category->id)
+        ->where('status', true)
+        ->latest()
+        ->paginate(10)
+        ->withQueryString();
+
+    // All hardcoded pages now receive dynamic posts too
+    $viewMap = [
+        'drama'     => 'Works/SingleDrama',
+        'tv-series' => 'Works/TelevisionSeries',
+        'music'     => 'Works/Music',
+        'cinema'    => 'Works/Cinema',
+    ];
+
+    $view = $viewMap[$slug] ?? 'Works/Category';
+
+    return Inertia::render($view, [
+        'category' => $category,
+        'posts'    => $posts,
+    ]);
+})->name('works.category');

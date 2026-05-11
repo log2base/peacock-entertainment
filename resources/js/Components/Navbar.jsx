@@ -3,10 +3,11 @@ import { Link, usePage } from '@inertiajs/react';
 import Logo from './Logo';
 
 export default function Navbar() {
-    const { url } = usePage();
+    const { url, props } = usePage();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
     const dropdownRef = useRef(null);
+    const categories = props.globalCategories || [];
 
     const navLinks = [
         { name: 'Home', href: '/' },
@@ -15,7 +16,10 @@ export default function Navbar() {
         { 
             name: 'Our Works', 
             href: '#',
-            dropdown: [
+            dropdown: categories.length > 0 ? categories.map(cat => ({
+                name: cat.name,
+                href: `/${cat.slug}`
+            })) : [
                 { name: 'Single Drama', href: '/single-drama' },
                 { name: 'Television Series', href: '/television-series' },
                 { name: 'Music', href: '/music' },

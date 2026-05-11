@@ -3,11 +3,44 @@ import { Link, usePage } from '@inertiajs/react'
 export default function AdminLayout({ children, title }) {
     const { flash, auth } = usePage().props
 
-    const navItems = [
+    const roleNavItems = [
         { href: '/admin/roles', label: 'Roles', icon: '🛡️' },
         { href: '/admin/permissions', label: 'Permissions', icon: '🔑' },
         { href: '/admin/users/roles', label: 'User Roles', icon: '👥' },
     ]
+
+    const contentNavItems = [
+        { href: '/admin/categories', label: 'Categories', icon: '📁' },
+        { href: '/admin/posts', label: 'Posts', icon: '🎬' },
+    ]
+
+    const NavSection = ({ label, items }) => (
+        <div className="mt-6">
+            <div className="mb-2 px-3">
+                <span className="text-[11px] font-semibold uppercase tracking-widest text-slate-500">{label}</span>
+            </div>
+            {items.map((item) => {
+                const isActive = window.location.pathname.startsWith(item.href)
+                return (
+                    <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200 ${
+                            isActive
+                                ? 'bg-gradient-to-r from-indigo-500/15 to-purple-500/10 text-indigo-300 shadow-sm shadow-indigo-500/5'
+                                : 'text-slate-400 hover:bg-white/5 hover:text-white'
+                        }`}
+                    >
+                        <span className="text-base">{item.icon}</span>
+                        {item.label}
+                        {isActive && (
+                            <div className="ml-auto h-1.5 w-1.5 rounded-full bg-indigo-400 shadow-sm shadow-indigo-400/50" />
+                        )}
+                    </Link>
+                )
+            })}
+        </div>
+    )
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950">
@@ -22,32 +55,9 @@ export default function AdminLayout({ children, title }) {
                 </div>
 
                 {/* Navigation */}
-                <nav className="mt-6 space-y-1 px-3">
-                    <div className="mb-4 px-3">
-                        <span className="text-[11px] font-semibold uppercase tracking-widest text-slate-500">
-                            Role Management
-                        </span>
-                    </div>
-                    {navItems.map((item) => {
-                        const isActive = window.location.pathname.startsWith(item.href)
-                        return (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className={`group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200 ${
-                                    isActive
-                                        ? 'bg-gradient-to-r from-indigo-500/15 to-purple-500/10 text-indigo-300 shadow-sm shadow-indigo-500/5'
-                                        : 'text-slate-400 hover:bg-white/5 hover:text-white'
-                                }`}
-                            >
-                                <span className="text-base">{item.icon}</span>
-                                {item.label}
-                                {isActive && (
-                                    <div className="ml-auto h-1.5 w-1.5 rounded-full bg-indigo-400 shadow-sm shadow-indigo-400/50" />
-                                )}
-                            </Link>
-                        )
-                    })}
+                <nav className="px-3 overflow-y-auto">
+                    <NavSection label="Role Management" items={roleNavItems} />
+                    <NavSection label="Content" items={contentNavItems} />
                 </nav>
 
                 {/* Back to home */}
