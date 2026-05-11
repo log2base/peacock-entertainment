@@ -54,6 +54,9 @@ class HandleInertiaRequests extends Middleware
                     ]
                 ),
             ] : null,
+
+            // Global categories for navigation
+            'globalCategories' => fn () => \App\Models\Category::where('status', true)->get(['id', 'name', 'slug']),
         ];
     }
 }
