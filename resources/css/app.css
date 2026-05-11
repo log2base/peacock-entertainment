@@ -4,8 +4,48 @@
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
+@source '../**/*.jsx';
 
 @theme {
+    --color-primary: #ffc300;
+    --color-secondary: #1c2833;
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+@utility animate-fade-in-down {
+    animation: fade-in-down 0.3s ease-out;
+}
+
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@layer utilities {
+    .font-10 { @apply text-[10px]; }
+    .font-11 { @apply text-[11px] md:text-[11px]; }
+    .font-12 { @apply text-[11px] md:text-[12px]; }
+    .font-14 { @apply text-[12px] md:text-[14px]; }
+    .font-16 { @apply text-[14px] md:text-[16px]; }
+    .font-18 { @apply text-[16px] md:text-[18px]; }
+    .font-20 { @apply text-[16px] md:text-[20px]; }
+    .font-24 { @apply text-[18px] md:text-[24px]; }
+    .font-28 { @apply text-[20px] md:text-[28px]; }
+    .font-32 { @apply text-[24px] md:text-[28px] lg:text-[32px]; }
+    .font-36 { @apply text-[26px] md:text-[32px] lg:text-[36px]; }
+    .font-40 { @apply text-[28px] md:text-[36px] lg:text-[40px]; }
+    .font-48 { @apply text-[32px] md:text-[40px] lg:text-[48px]; }
+    .font-56 { @apply text-[36px] md:text-[48px] lg:text-[56px]; }
+    .font-64 { @apply text-[40px] md:text-[56px] lg:text-[64px]; }
+    .font-72 { @apply text-[44px] md:text-[60px] lg:text-[72px]; }
+    .font-80 { @apply text-[48px] md:text-[64px] lg:text-[80px]; }
+    .font-96 { @apply text-[48px] md:text-[72px] lg:text-[96px]; }
+}
+

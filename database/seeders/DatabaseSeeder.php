@@ -15,11 +15,39 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Seed roles and permissions first
+        $this->call(RolesAndPermissionsSeeder::class);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // Create a super-admin user
+        $superAdmin = User::factory()->create([
+            'name' => 'Super Admin',
+            'email' => 'admin@peacock.test',
+            'password' => bcrypt('password'),
         ]);
+        $superAdmin->assignRole('super-admin');
+
+        // Create a test user with admin role
+        $admin = User::factory()->create([
+            'name' => 'Test Admin',
+            'email' => 'testadmin@peacock.test',
+            'password' => bcrypt('password'),
+        ]);
+        $admin->assignRole('admin');
+
+        // Create a test user with editor role
+        $editor = User::factory()->create([
+            'name' => 'Test Editor',
+            'email' => 'editor@peacock.test',
+            'password' => bcrypt('password'),
+        ]);
+        $editor->assignRole('editor');
+
+        // Create a test user with viewer role
+        $viewer = User::factory()->create([
+            'name' => 'Test Viewer',
+            'email' => 'viewer@peacock.test',
+            'password' => bcrypt('password'),
+        ]);
+        $viewer->assignRole('viewer');
     }
 }
