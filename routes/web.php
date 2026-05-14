@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RoleController;
@@ -10,18 +11,7 @@ use Inertia\Inertia;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', function () {
-    $featuredPosts = \App\Models\Post::where('is_featured', true)
-        ->where('status', true)
-        ->with('category')
-        ->latest()
-        ->take(4)
-        ->get();
-
-    return Inertia::render('Home', [
-        'featuredPosts' => $featuredPosts,
-    ]);
-})->name('home');
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::get('/about', function () {
     return Inertia::render('About');
@@ -69,27 +59,4 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 // Dynamic Category Route (Placed at the very end to not override actual routes like /login or /admin)
-Route::get('/{slug}', function ($slug) {
-    $category = \App\Models\Category::where('slug', $slug)->where('status', true)->firstOrFail();
-
-    $posts = \App\Models\Post::where('category_id', $category->id)
-        ->where('status', true)
-        ->latest()
-        ->paginate(10)
-        ->withQueryString();
-
-    // All hardcoded pages now receive dynamic posts too
-    $viewMap = [
-        'drama'     => 'Works/SingleDrama',
-        'tv-series' => 'Works/TelevisionSeries',
-        'music'     => 'Works/Music',
-        'cinema'    => 'Works/Cinema',
-    ];
-
-    $view = $viewMap[$slug] ?? 'Works/Category';
-
-    return Inertia::render($view, [
-        'category' => $category,
-        'posts'    => $posts,
-    ]);
-})->name('works.category');
+Route::get('/{slug}', [HomeController::class, 'category'])->name('works.category');

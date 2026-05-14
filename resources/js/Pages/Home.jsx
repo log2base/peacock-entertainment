@@ -37,7 +37,7 @@ function HeroSlider({ posts }) {
     const imageUrl = getImageUrl(current);
 
     return (
-        <section className="relative h-[600px] md:h-[800px] overflow-hidden">
+        <section className="relative h-auto min-h-[600px] lg:h-[800px] pt-24 pb-20 lg:py-0 overflow-hidden flex items-center">
             {/* Background blur */}
             <div className="absolute inset-0 z-0">
                 {imageUrl ? (
@@ -52,20 +52,20 @@ function HeroSlider({ posts }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c101b] via-[#0c101b]/80 to-transparent" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 h-full flex items-center relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 flex flex-col justify-center h-full">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center w-full">
                     {/* Poster */}
-                    <div className="lg:col-span-5 flex justify-center">
+                    <div className="hidden lg:flex lg:col-span-5 justify-center mt-4 lg:mt-0">
                         <div className="relative group perspective-1000">
                             <div className="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl group-hover:bg-primary/30 transition-all duration-700" />
                             {imageUrl ? (
                                 <img
                                     src={imageUrl}
                                     alt={current.title}
-                                    className="relative w-72 md:w-96 aspect-[2/3] object-cover rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-1"
+                                    className="relative w-48 sm:w-64 md:w-80 lg:w-96 aspect-[2/3] object-cover rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-1"
                                 />
                             ) : (
-                                <div className="relative w-72 md:w-80 aspect-[2/3] rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                                <div className="relative w-48 sm:w-64 md:w-80 lg:w-80 aspect-[2/3] rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                                     <svg className="w-20 h-20 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
                                     </svg>
@@ -80,35 +80,35 @@ function HeroSlider({ posts }) {
                     </div>
 
                     {/* Info */}
-                    <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
-                        <div className="space-y-4">
+                    <div className="lg:col-span-7 space-y-5 lg:space-y-8 text-center lg:text-left">
+                        <div className="space-y-3 lg:space-y-4">
                             {current.category && (
-                                <span className="inline-block text-primary font-bold uppercase tracking-widest text-sm border border-primary/30 px-3 py-1 rounded-full">
+                                <span className="inline-block text-primary font-bold uppercase tracking-widest text-[10px] sm:text-xs md:text-sm border border-primary/30 px-3 py-1 rounded-full">
                                     {current.category.name}
                                 </span>
                             )}
-                            <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none">
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black uppercase tracking-tighter leading-[1.1] break-words hyphens-auto w-full">
                                 {current.title}
                             </h1>
-                            <div className="flex items-center justify-center lg:justify-start gap-4 text-gray-400 font-bold uppercase tracking-widest text-sm">
+                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 md:gap-4 text-gray-400 font-bold uppercase tracking-widest text-[10px] sm:text-xs md:text-sm">
                                 <span className="text-primary">★ {current.rating}/10</span>
                                 <span>•</span>
                                 <span>{new Date(current.created_at).getFullYear()}</span>
                                 <span>•</span>
-                                <span className="border border-gray-700 px-2 py-0.5 rounded text-xs">HD</span>
+                                <span className="border border-gray-700 px-2 py-0.5 rounded text-[9px] md:text-xs">HD</span>
                             </div>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+                        <div className="flex flex-row gap-3 sm:gap-6 justify-center lg:justify-start">
                             {current.url ? (
                                 <a
                                     href={current.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group relative bg-primary text-secondary px-10 py-5 rounded-2xl font-black text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,195,0,0.4)]"
+                                    className="group relative bg-primary text-secondary px-6 sm:px-10 py-3 sm:py-5 rounded-2xl font-black text-sm sm:text-base md:text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,195,0,0.4)]"
                                 >
-                                    <span className="relative z-10 flex items-center gap-3">
-                                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
+                                        <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M4.5 3.5v13l11-6.5-11-6.5z" />
                                         </svg>
                                         WATCH NOW
@@ -116,9 +116,9 @@ function HeroSlider({ posts }) {
                                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                                 </a>
                             ) : (
-                                <button className="group relative bg-primary text-secondary px-10 py-5 rounded-2xl font-black text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,195,0,0.4)]">
-                                    <span className="relative z-10 flex items-center gap-3">
-                                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <button className="group relative bg-primary text-secondary px-6 sm:px-10 py-3 sm:py-5 rounded-2xl font-black text-sm sm:text-base md:text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,195,0,0.4)]">
+                                    <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
+                                        <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M4.5 3.5v13l11-6.5-11-6.5z" />
                                         </svg>
                                         WATCH NOW
@@ -129,18 +129,17 @@ function HeroSlider({ posts }) {
                         </div>
 
                         {/* Thumbnail nav */}
-                        <div className="hidden lg:flex gap-4 pt-8">
+                        <div className="flex gap-2 sm:gap-4 pt-2 sm:pt-8 overflow-x-auto pb-2 sm:pb-4 scrollbar-hide justify-center lg:justify-start w-full">
                             {posts.map((post, idx) => {
                                 const thumb = getImageUrl(post);
                                 return (
                                     <button
                                         key={post.id}
                                         onClick={() => setActive(idx)}
-                                        className={`relative w-20 h-28 rounded-lg overflow-hidden transition-all duration-300 ${
-                                            active === idx
-                                                ? 'ring-2 ring-primary scale-110 -translate-y-2.5'
-                                                : 'opacity-40 hover:opacity-100'
-                                        }`}
+                                        className={`relative w-16 sm:w-20 h-24 sm:h-28 rounded-lg overflow-hidden transition-all duration-300 flex-shrink-0 ${active === idx
+                                            ? 'ring-2 ring-primary scale-110 -translate-y-2.5'
+                                            : 'opacity-40 hover:opacity-100'
+                                            }`}
                                     >
                                         {thumb ? (
                                             <img src={thumb} className="w-full h-full object-cover" alt="" />
@@ -163,9 +162,8 @@ function HeroSlider({ posts }) {
                     <button
                         key={idx}
                         onClick={() => setActive(idx)}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${
-                            active === idx ? 'w-8 bg-primary' : 'w-1.5 bg-white/30 hover:bg-white/50'
-                        }`}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${active === idx ? 'w-8 bg-primary' : 'w-1.5 bg-white/30 hover:bg-white/50'
+                            }`}
                     />
                 ))}
             </div>
@@ -220,39 +218,91 @@ function PostCard({ post }) {
     );
 }
 
-export default function Home({ featuredPosts }) {
+const categoryIcons = {
+    cinema: '🎬',
+    drama: '🎭',
+    'tv-series': '📺',
+    music: '🎵',
+};
+
+const categoryAccent = {
+    cinema: 'from-amber-500/20 to-orange-600/20',
+    drama: 'from-rose-500/20 to-pink-600/20',
+    'tv-series': 'from-blue-500/20 to-indigo-600/20',
+    music: 'from-emerald-500/20 to-teal-600/20',
+};
+
+function CategorySection({ category, posts }) {
+    if (!posts || posts.length === 0) return null;
+
+    const icon = categoryIcons[category.slug] || '🎥';
+    const accentGradient = categoryAccent[category.slug] || 'from-primary/20 to-primary/10';
+
+    return (
+        <section className="mb-20">
+            {/* Section header */}
+            <div className="flex items-center justify-between mb-10">
+                <div className="flex items-center gap-5">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${accentGradient} flex items-center justify-center text-2xl shadow-lg`}>
+                        {icon}
+                    </div>
+                    <div>
+                        <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter">
+                            {category.name}
+                        </h2>
+                        <div className="w-12 h-0.5 bg-primary rounded-full mt-1" />
+                    </div>
+                </div>
+                <Link
+                    href={`/${category.slug}`}
+                    className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/40 hover:text-primary transition-colors duration-300"
+                >
+                    View All
+                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                </Link>
+            </div>
+
+            {/* Horizontal scroll on mobile, grid on larger screens */}
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+                {posts.map((post) => (
+                    <PostCard key={post.id} post={post} />
+                ))}
+            </div>
+        </section>
+    );
+}
+
+export default function Home({ featuredPosts, categorySections }) {
     const posts = featuredPosts ?? [];
+    const sections = categorySections ?? [];
 
     return (
         <AppLayout>
             {/* Hero Slider */}
             <HeroSlider posts={posts} />
 
-            {/* Featured Posts Grid */}
-            {posts.length > 0 && (
-                <div className="py-24">
-                    <section className="max-w-7xl mx-auto px-6">
-                        <div className="flex items-center gap-8 mb-16">
-                            <div className="flex-1 h-px bg-gradient-to-r from-transparent to-white/20" />
-                            <h2 className="text-3xl font-black uppercase tracking-tighter text-center whitespace-nowrap">
-                                Featured <span className="text-primary italic">Tonight</span>
-                            </h2>
-                            <div className="flex-1 h-px bg-gradient-to-l from-transparent to-white/20" />
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                            {posts.map((post) => (
-                                <PostCard key={post.id} post={post} />
-                            ))}
-                        </div>
-                    </section>
+            {/* Category-wise Content Sections */}
+            {sections.length > 0 && (
+                <div className="py-20">
+                    <div className="max-w-7xl mx-auto px-6">
+                        {sections.map((section) => (
+                            <CategorySection
+                                key={section.category.id}
+                                category={section.category}
+                                posts={section.posts}
+                            />
+                        ))}
+                    </div>
                 </div>
             )}
 
-            {/* Empty state for no featured posts */}
-            {posts.length === 0 && (
+            {/* Empty state when no content at all */}
+            {posts.length === 0 && sections.length === 0 && (
                 <div className="py-24 max-w-7xl mx-auto px-6 text-center">
                     <p className="text-white/20 text-sm uppercase tracking-widest">
-                        No featured content yet — mark posts as featured in the admin panel
+                        No content yet — add posts in the admin panel
                     </p>
                 </div>
             )}

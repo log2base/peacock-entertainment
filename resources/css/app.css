@@ -47,5 +47,12 @@
     .font-72 { @apply text-[44px] md:text-[60px] lg:text-[72px]; }
     .font-80 { @apply text-[48px] md:text-[64px] lg:text-[80px]; }
     .font-96 { @apply text-[48px] md:text-[72px] lg:text-[96px]; }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
 }
 

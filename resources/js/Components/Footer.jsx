@@ -5,14 +5,14 @@ import Logo from './Logo';
 export default function Footer() {
     return (
         <footer className="bg-[#0c101b] pt-32 pb-12 border-t border-white/5">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 pb-24">
+            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 pb-24 text-center sm:text-left">
                 <div className="space-y-8 col-span-1 lg:col-span-1">
                     <Logo className="scale-125 origin-left" />
                     <p className="text-white/40 font-14 leading-relaxed max-w-xs font-medium">
                         PEACOCK ENTERTAINMENT is a visionary motion picture production house. We craft immersive stories that resonate globally, blending art with cutting-edge technology.
                     </p>
                     <div className="flex gap-4">
-                        {[ 'FB', 'YT', 'IG', 'X' ].map((social) => (
+                        {['FB', 'YT', 'IG', 'X'].map((social) => (
                             <div key={social} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center font-10 font-black hover:bg-primary hover:text-secondary hover:border-primary transition-all cursor-pointer">
                                 {social}
                             </div>

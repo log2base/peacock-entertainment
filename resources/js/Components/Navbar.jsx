@@ -13,8 +13,8 @@ export default function Navbar() {
         { name: 'Home', href: '/' },
         { name: 'About', href: '/about' },
         { name: 'Who We Are', href: '#' },
-        { 
-            name: 'Our Works', 
+        {
+            name: 'Our Works',
             href: '#',
             dropdown: categories.length > 0 ? categories.map(cat => ({
                 name: cat.name,
@@ -47,19 +47,18 @@ export default function Navbar() {
         <nav className="bg-[#0c101b]/80 backdrop-blur-xl border-b border-white/5 sticky top-0 z-50 transition-all duration-500">
             <div className="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
                 <Logo className="scale-110" />
-                
+
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center space-x-10 font-11 font-black uppercase tracking-[0.2em]">
+                <div className="hidden lg:flex items-center space-x-6 xl:space-x-10 font-11 font-black uppercase tracking-[0.2em]">
                     {navLinks.map((link) => (
                         <div key={link.name} className="relative" ref={link.dropdown ? dropdownRef : null}>
                             {link.dropdown ? (
                                 <button
                                     onMouseEnter={() => setOpenDropdown(link.name)}
-                                    className={`flex items-center gap-2 transition-all duration-300 hover:text-primary group ${
-                                        isActive(link.href) || openDropdown === link.name
-                                            ? 'text-primary' 
+                                    className={`flex items-center gap-2 transition-all duration-300 hover:text-primary group ${isActive(link.href) || openDropdown === link.name
+                                            ? 'text-primary'
                                             : 'text-white/70'
-                                    }`}
+                                        }`}
                                 >
                                     {link.name}
                                     <svg className={`w-3 h-3 transition-transform duration-300 ${openDropdown === link.name ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,11 +68,10 @@ export default function Navbar() {
                             ) : (
                                 <Link
                                     href={link.href}
-                                    className={`relative transition-all duration-300 hover:text-white group ${
-                                        isActive(link.href) 
-                                            ? 'text-primary' 
+                                    className={`relative transition-all duration-300 hover:text-white group ${isActive(link.href)
+                                            ? 'text-primary'
                                             : 'text-white/70'
-                                    }`}
+                                        }`}
                                 >
                                     {link.name}
                                     <span className={`absolute -bottom-2 left-0 h-0.5 bg-primary transition-all duration-300 ${isActive(link.href) ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -82,7 +80,7 @@ export default function Navbar() {
 
                             {/* Dropdown Menu */}
                             {link.dropdown && openDropdown === link.name && (
-                                <div 
+                                <div
                                     onMouseLeave={() => setOpenDropdown(null)}
                                     className="absolute top-full -left-4 mt-0 w-64 bg-[#0f171e] shadow-2xl border-t-2 border-primary overflow-hidden animate-fade-in-down py-2"
                                 >
@@ -105,7 +103,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Toggle */}
                 <button 
-                    className="md:hidden text-white focus:outline-none p-2"
+                    className="lg:hidden text-white focus:outline-none p-2"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     <div className="w-6 h-5 flex flex-col justify-between">
@@ -118,7 +116,7 @@ export default function Navbar() {
 
             {/* Mobile Nav */}
             {isMenuOpen && (
-                <div className="md:hidden bg-[#0c101b] border-t border-white/5 px-8 py-10 space-y-8 animate-fade-in h-screen overflow-y-auto">
+                <div className="lg:hidden absolute top-full left-0 w-full bg-[#0c101b] border-t border-white/5 px-8 py-10 pb-32 space-y-8 animate-fade-in h-[calc(100vh-6rem)] overflow-y-auto shadow-2xl">
                     {navLinks.map((link) => (
                         <div key={link.name}>
                             {link.dropdown ? (
@@ -142,9 +140,8 @@ export default function Navbar() {
                             ) : (
                                 <Link
                                     href={link.href}
-                                    className={`block font-12 font-black uppercase tracking-[0.2em] ${
-                                        isActive(link.href) ? 'text-primary' : 'text-white'
-                                    }`}
+                                    className={`block font-12 font-black uppercase tracking-[0.2em] ${isActive(link.href) ? 'text-primary' : 'text-white'
+                                        }`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {link.name}

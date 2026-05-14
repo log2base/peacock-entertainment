@@ -108,11 +108,11 @@ export default function PostEdit({ post, categories, featuredCount }) {
                                 id="category_id"
                                 value={data.category_id}
                                 onChange={(e) => setData('category_id', e.target.value)}
-                                className={inputCls(errors.category_id)}
+                                className={`${inputCls(errors.category_id)} bg-slate-900`}
                             >
-                                <option value="">— No category —</option>
+                                <option value="" className="bg-slate-900 text-white">— No category —</option>
                                 {categories?.map((cat) => (
-                                    <option key={cat.id} value={String(cat.id)}>{cat.name}</option>
+                                    <option key={cat.id} value={String(cat.id)} className="bg-slate-900 text-white">{cat.name}</option>
                                 ))}
                             </select>
                             <FieldError error={errors.category_id} />
