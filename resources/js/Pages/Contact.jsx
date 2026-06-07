@@ -13,7 +13,7 @@ export default function Contact() {
         {
             icon: "✉️",
             title: "Email Us",
-            detail: "info@peacock-entertainment.com",
+            detail: "peacockentertainmentlimited@gmail.com",
             sub: "Online support 24/7"
         },
         {
@@ -25,7 +25,7 @@ export default function Contact() {
         {
             icon: "📍",
             title: "Visit Us",
-            detail: "Niketon, Gulshan-1",
+            detail: "Flat 10E, House 10, Road 2/2, Banani, Dhaka-1213",
             sub: "Dhaka, Bangladesh"
         }
     ];
@@ -46,7 +46,7 @@ export default function Contact() {
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors"></div>
                             <div className="text-4xl mb-6">{info.icon}</div>
                             <h3 className="text-primary font-bold uppercase tracking-widest mb-2 font-12">{info.title}</h3>
-                            <p className="font-20 font-bold mb-1">{info.detail}</p>
+                            <p className="font-20 font-bold mb-1 break-all">{info.detail}</p>
                             <p className="font-14 text-gray-500 font-bold uppercase tracking-tighter">{info.sub}</p>
                         </div>
                     ))}
@@ -91,23 +91,24 @@ export default function Contact() {
                         </div>
 
                         {/* Map/Visual Side */}
-                        <div className="lg:w-[400px] xl:w-[500px] bg-secondary relative overflow-hidden border-t lg:border-t-0 lg:border-l border-gray-800">
-                            <div className="absolute inset-0 z-0 grayscale contrast-150 opacity-40">
+                        <div className="lg:w-[400px] xl:w-[500px] bg-secondary relative overflow-hidden border-t lg:border-t-0 lg:border-l border-gray-800 min-h-[300px]">
+                            <div className="absolute inset-0 z-0">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3651.1042738947934!2d90.41400827610423!3d23.779308187689953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c79e66978589%3A0x6a3782b3a0e5b7c!2sNiketon%20Gulshan-1!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
+                                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d35256.8616995254!2d90.36735401775468!3d23.776032657226956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sFlat%2010E%2C%20House%2010%2C%20Road%202%2F2%2C%20Banani%2C%20DHaka-1213!5e1!3m2!1sen!2sbd!4v1780830206718!5m2!1sen!2sbd"
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0 }}
                                     allowFullScreen=""
                                     loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
                                 />
                             </div>
-                            <div className="absolute inset-0 bg-gradient-to-b from-[#0f171e] via-transparent to-[#0f171e] lg:bg-gradient-to-r lg:from-[#0f171e] lg:to-transparent z-10"></div>
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0f171e] to-transparent z-10 h-32 pointer-events-none"></div>
 
-                            <div className="relative z-20 h-full flex flex-col justify-end p-12 space-y-4">
-                                <div className="w-16 h-1 bg-primary"></div>
-                                <h3 className="font-24 font-black uppercase tracking-tighter">Based in <br /><span className="text-primary italic">Dhaka, BD</span></h3>
-                                <p className="font-14 text-gray-500 font-bold uppercase tracking-widest">Global Reach • Cinematic Quality</p>
+                            <div className="absolute bottom-0 left-0 right-0 z-20 p-8 space-y-2">
+                                <div className="w-12 h-1 bg-primary"></div>
+                                <h3 className="font-20 font-black uppercase tracking-tighter">Based in <span className="text-primary italic">Dhaka, BD</span></h3>
+                                <p className="font-12 text-gray-400 font-bold uppercase tracking-widest">Flat 10E, House 10, Road 2/2, Banani</p>
                             </div>
                         </div>
                     </div>
