@@ -17,6 +17,10 @@ Route::get('/about', function () {
     return Inertia::render('About');
 })->name('about');
 
+Route::get('/who-we-are', function () {
+    return Inertia::render('WhoWeAre');
+})->name('who.we.are');
+
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');

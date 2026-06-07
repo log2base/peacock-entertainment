@@ -11,13 +11,13 @@ export default function Footer() {
                     <p className="text-white/40 font-14 leading-relaxed max-w-xs font-medium">
                         PEACOCK ENTERTAINMENT is a visionary motion picture production house. We craft immersive stories that resonate globally, blending art with cutting-edge technology.
                     </p>
-                    <div className="flex gap-4">
+                    {/* <div className="flex gap-4">
                         {['FB', 'YT', 'IG', 'X'].map((social) => (
                             <div key={social} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center font-10 font-black hover:bg-primary hover:text-secondary hover:border-primary transition-all cursor-pointer">
                                 {social}
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="space-y-8">
@@ -52,11 +52,11 @@ export default function Footer() {
                     <div className="space-y-6 text-white/50 font-12 font-bold uppercase tracking-widest leading-loose">
                         <p className="flex items-start gap-4">
                             <span className="text-primary font-18">📍</span>
-                            Dhaka, Bangladesh
+                            Flat 10E, House 10, Road 2/2, Banani, Dhaka-1213
                         </p>
                         <p className="flex items-center gap-4 hover:text-primary transition-colors cursor-pointer">
                             <span className="text-primary font-18">✉️</span>
-                            info@peacock-entertainment.com
+                            peacockentertainmentlimited@gmail.com
                         </p>
                         <p className="flex items-center gap-4">
                             <span className="text-primary font-18">📞</span>
