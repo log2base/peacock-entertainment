@@ -14,7 +14,7 @@ export default function Navbar() {
         { name: 'About', href: '/about' },
         { name: 'Who We Are', href: '/who-we-are' },
         {
-            name: 'Our Works',
+            name: 'OUR WORKS',
             href: '#',
             dropdown: categories.length > 0 ? categories.map(cat => ({
                 name: cat.name,
@@ -26,7 +26,7 @@ export default function Navbar() {
                 { name: 'Cinema', href: '/cinema' },
             ]
         },
-        { name: 'News', href: '#' },
+        // { name: 'News', href: '#' },
         { name: 'Contact', href: '/contact' },
     ];
 

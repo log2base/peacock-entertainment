@@ -19,7 +19,7 @@ export default function Contact() {
         {
             icon: "📞",
             title: "Call Us",
-            detail: "+880 1234 567890",
+            detail: "+880 1625-770071",
             sub: "Mon - Fri, 9am - 6pm"
         },
         {

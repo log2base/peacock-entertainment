@@ -55,7 +55,7 @@ function HeroSlider({ posts }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 flex flex-col justify-center h-full">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center w-full">
                     {/* Poster */}
-                    <div className="hidden lg:flex lg:col-span-5 justify-center mt-4 lg:mt-0">
+                    <div className="flex lg:col-span-5 justify-center mt-4 lg:mt-0 mb-8 lg:mb-0">
                         <div className="relative group perspective-1000">
                             <div className="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl group-hover:bg-primary/30 transition-all duration-700" />
                             {imageUrl ? (
@@ -92,10 +92,6 @@ function HeroSlider({ posts }) {
                             </h1>
                             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 md:gap-4 text-gray-400 font-bold uppercase tracking-widest text-[10px] sm:text-xs md:text-sm">
                                 <span className="text-primary">★ {current.rating}/10</span>
-                                <span>•</span>
-                                <span>{new Date(current.created_at).getFullYear()}</span>
-                                <span>•</span>
-                                <span className="border border-gray-700 px-2 py-0.5 rounded text-[9px] md:text-xs">HD</span>
                             </div>
                         </div>
 
@@ -129,7 +125,7 @@ function HeroSlider({ posts }) {
                         </div>
 
                         {/* Thumbnail nav */}
-                        <div className="flex gap-2 sm:gap-4 pt-2 sm:pt-8 overflow-x-auto pb-2 sm:pb-4 scrollbar-hide justify-center lg:justify-start w-full">
+                        <div className="flex gap-3 sm:gap-4 pt-6 sm:pt-8 overflow-x-auto pb-6 sm:pb-4 scrollbar-hide justify-center lg:justify-start w-full px-2">
                             {posts.map((post, idx) => {
                                 const thumb = getImageUrl(post);
                                 return (
@@ -210,8 +206,6 @@ function PostCard({ post }) {
                 </h3>
                 <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-gray-500">
                     {post.category && <span className="text-primary/70">{post.category.name}</span>}
-                    {post.category && <span className="w-1 h-1 bg-gray-700 rounded-full" />}
-                    <span>{new Date(post.created_at).getFullYear()}</span>
                 </div>
             </div>
         </Wrapper>
@@ -264,7 +258,7 @@ function CategorySection({ category, posts }) {
                 </Link>
             </div>
 
-            {/* Horizontal scroll on mobile, grid on larger screens */}
+            {/* Grid for posts */}
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                 {posts.map((post) => (
                     <PostCard key={post.id} post={post} />

@@ -56,7 +56,7 @@ export default function AdminLayout({ children, title }) {
 
                 {/* Navigation */}
                 <nav className="px-3 overflow-y-auto">
-                    <NavSection label="Role Management" items={roleNavItems} />
+                    {/* <NavSection label="Role Management" items={roleNavItems} /> */}
                     <NavSection label="Content" items={contentNavItems} />
                 </nav>
 
