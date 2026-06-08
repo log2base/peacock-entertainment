@@ -20,16 +20,6 @@ export default function Footer() {
                     </div> */}
                 </div>
 
-                <div className="space-y-8">
-                    <h4 className="font-12 font-black uppercase tracking-[0.3em] text-primary">Quick Links</h4>
-                    <ul className="space-y-4">
-                        {['About Us', 'Our Works', 'News & Updates', 'Career', 'Contact'].map((item) => (
-                            <li key={item}>
-                                <Link href="#" className="text-white/50 hover:text-white transition-colors font-12 font-bold uppercase tracking-widest">{item}</Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
 
                 <div className="space-y-8">
                     <h4 className="font-12 font-black uppercase tracking-[0.3em] text-primary">Categories</h4>
@@ -48,31 +38,41 @@ export default function Footer() {
                 </div>
 
                 <div className="space-y-8">
+                    <h4 className="font-12 font-black uppercase tracking-[0.3em] text-primary">Quick Links</h4>
+                    <ul className="space-y-4">
+                        {['About Us',  'Contact'].map((item) => (
+                            <li key={item}>
+                                <Link href="#" className="text-white/50 hover:text-white transition-colors font-12 font-bold uppercase tracking-widest">{item}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="space-y-8">
                     <h4 className="font-12 font-black uppercase tracking-[0.3em] text-primary">Reach Us</h4>
                     <div className="space-y-6 text-white/50 font-12 font-bold uppercase tracking-widest leading-loose">
                         <p className="flex items-start gap-4">
                             <span className="text-primary font-18">📍</span>
                             Flat 10E, House 10, Road 2/2, Banani, Dhaka-1213
                         </p>
-                        <p className="flex items-center gap-4 hover:text-primary transition-colors cursor-pointer">
+                        <a href="mailto:peacockentertainmentlimited@gmail.com" className="flex items-center gap-4 hover:text-primary transition-colors cursor-pointer">
                             <span className="text-primary font-18">✉️</span>
                             peacockentertainmentlimited@gmail.com
-                        </p>
-                        <p className="flex items-center gap-4">
+                        </a>
+                        <a href="tel:+8801625770071" className="flex items-center gap-4 hover:text-primary transition-colors cursor-pointer">
                             <span className="text-primary font-18">📞</span>
-                            +880 1234 567890
-                        </p>
+                            +880 1625-770071
+                        </a>
                     </div>
                 </div>
             </div>
 
             <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 font-10 font-black uppercase tracking-[0.3em] text-white/20 text-center md:text-left">
                 <p>© {new Date().getFullYear()} PEACOCK ENTERTAINMENT. BEYOND IMAGINATION.</p>
-                <div className="flex gap-10">
+                {/* <div className="flex gap-10">
                     <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
                     <Link href="#" className="hover:text-white transition-colors">Terms</Link>
                     <Link href="#" className="hover:text-white transition-colors">Support</Link>
-                </div>
+                </div> */}
             </div>
         </footer>
     );

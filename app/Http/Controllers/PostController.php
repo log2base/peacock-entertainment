@@ -9,12 +9,22 @@ use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::with('category')->latest()->paginate(10);
+        $search = $request->input('search');
+
+        $posts = Post::with('category')
+            ->when($search, function ($query, $search) {
+                $query->where('title', 'like', "%{$search}%");
+            })
+            ->latest()
+            ->paginate(10)
+            ->withQueryString();
+
         return inertia('Posts/Index', [
             'posts'        => $posts,
             'featuredCount' => Post::where('is_featured', true)->count(),
+            'filters'      => $request->only(['search']),
         ]);
     }
 

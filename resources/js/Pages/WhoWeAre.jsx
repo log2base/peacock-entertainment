@@ -17,6 +17,12 @@ export default function WhoWeAre() {
             socials: ['facebook', 'twitter', 'instagram']
         },
         {
+            name: "Md. Rayhan Ullah",
+            designation: "Chief Video Editor",
+            image: "/team/Md.%20Rayhan%20Ullah-Chief%20Video%20Editor.PNG",
+            socials: ['facebook', 'twitter', 'instagram']
+        },
+        {
             name: "Al-Amin Hasan",
             designation: "Video Editor",
             image: "/team/Al-Amin%20Hasan-Video%20Editor.jpeg",
@@ -60,7 +66,7 @@ export default function WhoWeAre() {
                             </p>
 
                             {/* Social Icons */}
-                            <div className="flex space-x-3 mt-auto">
+                            {/* <div className="flex space-x-3 mt-auto">
                                 {member.socials.map((social, i) => (
                                     <a
                                         key={i}
@@ -74,7 +80,7 @@ export default function WhoWeAre() {
                                         </svg>
                                     </a>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                     ))}
                 </div>
