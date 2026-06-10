@@ -47,9 +47,9 @@ class PostController extends Controller
             'is_featured' => 'boolean',
         ]);
 
-        // Enforce max 4 featured posts
-        if (!empty($validated['is_featured']) && Post::where('is_featured', true)->count() >= 4) {
-            return back()->withErrors(['is_featured' => 'Maximum 4 featured posts allowed. Please un-feature another post first.']);
+        // Enforce max 8 featured posts
+        if (!empty($validated['is_featured']) && Post::where('is_featured', true)->count() >= 8) {
+            return back()->withErrors(['is_featured' => 'Maximum 8 featured posts allowed. Please un-feature another post first.']);
         }
 
         if ($request->hasFile('image')) {
@@ -87,10 +87,10 @@ class PostController extends Controller
             'is_featured' => 'boolean',
         ]);
 
-        // Enforce max 4 featured (exclude current post from count)
+        // Enforce max 8 featured (exclude current post from count)
         if (!empty($validated['is_featured']) && !$post->is_featured) {
-            if (Post::where('is_featured', true)->count() >= 4) {
-                return back()->withErrors(['is_featured' => 'Maximum 4 featured posts allowed. Please un-feature another post first.']);
+            if (Post::where('is_featured', true)->count() >= 8) {
+                return back()->withErrors(['is_featured' => 'Maximum 8 featured posts allowed. Please un-feature another post first.']);
             }
         }
 
@@ -125,8 +125,8 @@ class PostController extends Controller
     {
         if (!$post->is_featured) {
             $count = Post::where('is_featured', true)->count();
-            if ($count >= 4) {
-                return back()->withErrors(['featured' => 'Maximum 4 featured posts reached. Un-feature another post first.']);
+            if ($count >= 8) {
+                return back()->withErrors(['featured' => 'Maximum 8 featured posts reached. Un-feature another post first.']);
             }
         }
 

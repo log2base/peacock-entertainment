@@ -54,7 +54,7 @@ export default function PostEdit({ post, categories, featuredCount }) {
     const fileRef = useRef(null)
 
     // Can feature if currently featured OR there's room
-    const canFeature = post.is_featured || (featuredCount ?? 0) < 4
+    const canFeature = post.is_featured || (featuredCount ?? 0) < 8
 
     const { data, setData, post: submit, processing, errors } = useForm({
         _method: 'PUT',
@@ -207,7 +207,7 @@ export default function PostEdit({ post, categories, featuredCount }) {
                                 onChange={(v) => setData('is_featured', v)}
                                 label="Featured post ★"
                                 disabled={!canFeature && !data.is_featured}
-                                hint={!canFeature && !data.is_featured ? `Max 4 featured posts reached` : null}
+                                hint={!canFeature && !data.is_featured ? `Max 8 featured posts reached` : null}
                             />
                         </div>
                         <FieldError error={errors.is_featured} />

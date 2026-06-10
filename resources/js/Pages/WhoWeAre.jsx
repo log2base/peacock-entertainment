@@ -4,6 +4,12 @@ import HeroHeader from '../Components/HeroHeader';
 
 export default function WhoWeAre() {
     const team = [
+                {
+            name: "Akash Sarkar",
+            designation: "Chief Operating Officer - COO",
+            image: "/team/Akash%20Sarkar-Chief%20Operating%20Officer%20-%20COO.jpeg",
+            socials: ['facebook', 'twitter', 'instagram']
+        },
         {
             name: "Mohammad Shahriar Hossain",
             designation: "Chief Business Officer - CBO",
@@ -28,18 +34,12 @@ export default function WhoWeAre() {
             image: "/team/Al-Amin%20Hasan-Video%20Editor.jpeg",
             socials: ['facebook', 'twitter', 'instagram']
         },
-        {
-            name: "Akash Sarkar",
-            designation: "Chief Operating Officer - COO",
-            image: "/team/Akash%20Sarkar-Chief%20Operating%20Officer%20-%20COO.jpeg",
-            socials: ['facebook', 'twitter', 'instagram']
-        }
     ];
 
     return (
         <AppLayout>
             <HeroHeader
-                title={<>Cinemawala <span className="text-primary italic">Team</span></>}
+                title={<>Peacock Entertainment <span className="text-primary italic">Team</span></>}
                 subtitle="Who We Are"
                 bgImage="/about_header_bg.png"
             />
@@ -58,7 +58,7 @@ export default function WhoWeAre() {
                             </div>
 
                             {/* Details */}
-                            <h3 className="text-gray-900 font-bold text-lg mb-2 uppercase tracking-wider h-14 flex items-center justify-center group-hover:text-primary transition-colors">
+                            <h3 className="text-gray-200 font-bold text-lg mb-2 uppercase tracking-wider h-14 flex items-center justify-center group-hover:text-primary transition-colors">
                                 {member.name}
                             </h3>
                             <p className="text-gray-400 font-bold text-xs uppercase tracking-widest mb-6">

@@ -6,9 +6,9 @@ export default function HeroHeader({ title, subtitle, bgImage }) {
         <header className="relative h-[300px] md:h-[400px] flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0">
                 {bgImage && (
-                    <img 
-                        src={bgImage} 
-                        alt={title} 
+                    <img
+                        src={bgImage}
+                        alt={title}
                         className="w-full h-full object-cover opacity-40 scale-110"
                     />
                 )}
