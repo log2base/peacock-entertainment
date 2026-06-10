@@ -44,7 +44,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className="bg-[#0c101b]/80 backdrop-blur-xl border-b border-white/5 sticky top-0 z-50 transition-all duration-500">
+        <nav className="bg-[#0c101b]/80 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50 transition-all duration-500">
             <div className="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
                 <Logo className="scale-110" />
 
@@ -56,8 +56,8 @@ export default function Navbar() {
                                 <button
                                     onMouseEnter={() => setOpenDropdown(link.name)}
                                     className={`flex items-center gap-2 transition-all duration-300 hover:text-primary group ${isActive(link.href) || openDropdown === link.name
-                                            ? 'text-primary'
-                                            : 'text-white/70'
+                                        ? 'text-primary'
+                                        : 'text-white/70'
                                         }`}
                                 >
                                     {link.name}
@@ -69,8 +69,8 @@ export default function Navbar() {
                                 <Link
                                     href={link.href}
                                     className={`relative transition-all duration-300 hover:text-white group ${isActive(link.href)
-                                            ? 'text-primary'
-                                            : 'text-white/70'
+                                        ? 'text-primary'
+                                        : 'text-white/70'
                                         }`}
                                 >
                                     {link.name}
@@ -88,7 +88,7 @@ export default function Navbar() {
                                         <Link
                                             key={item.name}
                                             href={item.href}
-                                            className="block px-8 py-4 text-white/60 hover:bg-white/5 hover:text-primary transition-all font-bold font-10 uppercase tracking-widest"
+                                            className="block px-8 py-4 text-white/80 hover:bg-white/5 hover:text-primary transition-all font-bold font-10 uppercase tracking-widest"
                                         >
                                             {item.name}
                                         </Link>
@@ -102,8 +102,8 @@ export default function Navbar() {
 
 
                 {/* Mobile Menu Toggle */}
-                <button 
-                    className="lg:hidden text-white focus:outline-none p-2"
+                <button
+                    className="lg:hidden text-gray-900 focus:outline-none p-2"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     <div className="w-6 h-5 flex flex-col justify-between">
@@ -116,7 +116,7 @@ export default function Navbar() {
 
             {/* Mobile Nav */}
             {isMenuOpen && (
-                <div className="lg:hidden absolute top-full left-0 w-full bg-[#0c101b] border-t border-white/5 px-8 py-10 pb-32 space-y-8 animate-fade-in h-[calc(100vh-6rem)] overflow-y-auto shadow-2xl">
+                <div className="lg:hidden absolute top-full left-0 w-full bg-[#0c101b] border-t border-white/10 px-8 py-10 pb-32 space-y-8 animate-fade-in h-[calc(100vh-6rem)] overflow-y-auto shadow-2xl">
                     {navLinks.map((link) => (
                         <div key={link.name}>
                             {link.dropdown ? (
@@ -124,7 +124,7 @@ export default function Navbar() {
                                     <div className="font-12 font-black uppercase tracking-[0.2em] text-primary flex items-center justify-between">
                                         {link.name}
                                     </div>
-                                    <div className="pl-6 space-y-6 border-l-2 border-white/5">
+                                    <div className="pl-6 space-y-6 border-l-2 border-white/10">
                                         {link.dropdown.map((item) => (
                                             <Link
                                                 key={item.name}
@@ -140,7 +140,7 @@ export default function Navbar() {
                             ) : (
                                 <Link
                                     href={link.href}
-                                    className={`block font-12 font-black uppercase tracking-[0.2em] ${isActive(link.href) ? 'text-primary' : 'text-white'
+                                    className={`block font-12 font-black uppercase tracking-[0.2em] hover:text-white transition-colors ${isActive(link.href) ? 'text-primary' : 'text-white/70'
                                         }`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >

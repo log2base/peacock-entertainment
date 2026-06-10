@@ -4,11 +4,11 @@ import Logo from './Logo';
 
 export default function Footer() {
     return (
-        <footer className="bg-[#0c101b] pt-32 pb-12 border-t border-white/5">
+        <footer className="bg-[#0c101b] pt-32 pb-12 border-t border-white/10">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 pb-24 text-center sm:text-left">
                 <div className="space-y-8 col-span-1 lg:col-span-1">
                     <Logo className="scale-125 origin-left" />
-                    <p className="text-white/40 font-14 leading-relaxed max-w-xs font-medium">
+                    <p className="text-white/60 font-14 leading-relaxed max-w-xs font-medium">
                         PEACOCK ENTERTAINMENT is a visionary motion picture production house. We craft immersive stories that resonate globally, blending art with cutting-edge technology.
                     </p>
                     {/* <div className="flex gap-4">
@@ -66,12 +66,12 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 font-10 font-black uppercase tracking-[0.3em] text-white/20 text-center md:text-left">
+            <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 font-10 font-black uppercase tracking-[0.3em] text-white/40 text-center md:text-left">
                 <p>© {new Date().getFullYear()} PEACOCK ENTERTAINMENT. BEYOND IMAGINATION.</p>
                 {/* <div className="flex gap-10">
-                    <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
-                    <Link href="#" className="hover:text-white transition-colors">Terms</Link>
-                    <Link href="#" className="hover:text-white transition-colors">Support</Link>
+                    <Link href="#" className="hover:text-gray-900 transition-colors">Privacy</Link>
+                    <Link href="#" className="hover:text-gray-900 transition-colors">Terms</Link>
+                    <Link href="#" className="hover:text-gray-900 transition-colors">Support</Link>
                 </div> */}
             </div>
         </footer>

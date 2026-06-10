@@ -13,7 +13,7 @@ export default function Input({ label, type = "text", placeholder, name, require
                 name={name}
                 placeholder={placeholder}
                 required={required}
-                className="w-full bg-[#0f171e] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-gray-600"
+                className="w-full bg-[#0f171e] border border-gray-800 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary transition-colors placeholder:text-gray-600"
             />
         </div>
     );
@@ -32,7 +32,7 @@ export function TextArea({ label, placeholder, name, required = false, className
                 placeholder={placeholder}
                 required={required}
                 rows={5}
-                className="w-full bg-[#0f171e] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-gray-600 resize-none"
+                className="w-full bg-[#0f171e] border border-gray-800 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary transition-colors placeholder:text-gray-600 resize-none"
             />
         </div>
     );
