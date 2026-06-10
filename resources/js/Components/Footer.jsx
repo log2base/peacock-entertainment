@@ -40,7 +40,7 @@ export default function Footer() {
                 <div className="space-y-8">
                     <h4 className="font-12 font-black uppercase tracking-[0.3em] text-primary">Quick Links</h4>
                     <ul className="space-y-4">
-                        {['About Us',  'Contact'].map((item) => (
+                        {['About Us', 'Contact'].map((item) => (
                             <li key={item}>
                                 <Link href="#" className="text-white/50 hover:text-white transition-colors font-12 font-bold uppercase tracking-widest">{item}</Link>
                             </li>

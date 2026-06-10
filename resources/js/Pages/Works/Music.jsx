@@ -27,8 +27,8 @@ function PostCard({ post }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                 {post.url && (
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                        <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,195,0,0.5)]">
-                            <svg className="w-7 h-7 text-secondary ml-1" fill="currentColor" viewBox="0 0 20 20">
+                        <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(220,38,38,0.5)] transition-all duration-300">
+                            <svg className="w-7 h-7 text-white ml-1 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M4.5 3.5v13l11-6.5-11-6.5z" />
                             </svg>
                         </div>

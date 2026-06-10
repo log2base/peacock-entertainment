@@ -15,7 +15,7 @@ class HomeController extends Controller
             ->where('status', true)
             ->with('category')
             ->latest()
-            ->take(4)
+            ->take(8)
             ->get();
 
         // Fetch posts grouped by category for section-wise display

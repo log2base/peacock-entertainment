@@ -17,7 +17,7 @@ export default function NotFound() {
                             404
                         </h1>
                     </div>
-                    
+
                     <div className="mt-4 md:mt-8 animate-fade-in-down" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
                         <h2 className="font-36 md:font-48 font-bold text-gray-900 mb-4 uppercase tracking-widest">
                             Page Not Found
@@ -25,9 +25,9 @@ export default function NotFound() {
                         <p className="text-gray-400 font-18 max-w-lg mx-auto mb-10 font-light leading-relaxed">
                             The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
                         </p>
-                        
-                        <Link 
-                            href="/" 
+
+                        <Link
+                            href="/"
                             className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-[#0c101b] uppercase tracking-widest bg-primary hover:bg-primary/90 transition-all duration-300 rounded-full hover:shadow-[0_0_20px_rgba(255,195,0,0.4)] hover:-translate-y-1"
                         >
                             Back to Homepage
