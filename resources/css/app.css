@@ -7,8 +7,8 @@
 @source '../**/*.jsx';
 
 @theme {
-    --color-primary: #ffc300;
-    --color-secondary: #1c2833;
+    --color-primary: #432818;
+    --color-secondary: #FFFDD0;
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }

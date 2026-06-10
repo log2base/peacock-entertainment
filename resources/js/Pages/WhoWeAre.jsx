@@ -47,9 +47,9 @@ export default function WhoWeAre() {
             <main className="max-w-7xl mx-auto px-6 py-12 md:py-24">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {team.map((member, index) => (
-                        <div key={index} className="bg-[#15202b] rounded-3xl overflow-hidden border border-gray-800 hover:border-primary/50 transition-colors shadow-2xl group flex flex-col items-center text-center p-8">
+                        <div key={index} className="bg-[#e6b000] rounded-3xl overflow-hidden border border-primary/20 hover:border-primary/50 transition-colors shadow-2xl group flex flex-col items-center text-center p-8">
                             {/* Profile Image */}
-                            <div className="w-full shrink-0 mb-6 rounded-3xl overflow-hidden border border-gray-800 group-hover:border-primary transition-colors shadow-lg" style={{ height: '256px' }}>
+                            <div className="w-full shrink-0 mb-6 rounded-3xl overflow-hidden border border-primary/20 group-hover:border-primary transition-colors shadow-lg" style={{ height: '256px' }}>
                                 <img
                                     src={member.image}
                                     alt={member.name}
@@ -58,10 +58,10 @@ export default function WhoWeAre() {
                             </div>
 
                             {/* Details */}
-                            <h3 className="text-gray-200 font-bold text-lg mb-2 uppercase tracking-wider h-14 flex items-center justify-center group-hover:text-primary transition-colors">
+                            <h3 className="text-primary/90 font-bold text-lg mb-2 uppercase tracking-wider h-14 flex items-center justify-center group-hover:text-primary transition-colors">
                                 {member.name}
                             </h3>
-                            <p className="text-gray-400 font-bold text-xs uppercase tracking-widest mb-6">
+                            <p className="text-primary/70 font-bold text-xs uppercase tracking-widest mb-6">
                                 {member.designation}
                             </p>
 
@@ -71,7 +71,7 @@ export default function WhoWeAre() {
                                     <a
                                         key={i}
                                         href="#"
-                                        className="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-500 hover:text-primary hover:border-primary hover:bg-primary/10 transition-colors"
+                                        className="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary hover:bg-primary/10 transition-colors"
                                     >
                                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                             {social === 'facebook' && <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />}

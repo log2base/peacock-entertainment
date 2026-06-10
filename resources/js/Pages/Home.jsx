@@ -21,13 +21,13 @@ function HeroSlider({ posts }) {
     if (!posts || posts.length === 0) {
         return (
             <section className="relative h-[500px] md:h-[700px] overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c101b] via-[#0c101b]/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/80 to-transparent" />
                 <div className="relative z-10 text-center space-y-4">
                     <div className="text-6xl mb-4">🎬</div>
-                    <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white">
+                    <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-primary">
                         Welcome to <span className="text-primary italic">Peacock</span>
                     </h1>
-                    <p className="text-white/40 text-lg">Feature your posts to see them here</p>
+                    <p className="text-primary/60 text-lg">Feature your posts to see them here</p>
                 </div>
             </section>
         );
@@ -47,9 +47,9 @@ function HeroSlider({ posts }) {
                         className="w-full h-full object-cover blur-3xl opacity-30 scale-110 transition-all duration-1000"
                     />
                 ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-indigo-950 to-slate-900" />
+                    <div className="w-full h-full bg-gradient-to-br from-[#f0b500] to-[#e6a000]" />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c101b] via-[#0c101b]/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/80 to-transparent" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 flex flex-col justify-center h-full">
@@ -65,8 +65,8 @@ function HeroSlider({ posts }) {
                                     className="relative w-48 sm:w-64 md:w-80 lg:w-96 aspect-[2/3] object-cover rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-1"
                                 />
                             ) : (
-                                <div className="relative w-48 sm:w-64 md:w-80 lg:w-80 aspect-[2/3] rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                                    <svg className="w-20 h-20 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <div className="relative w-48 sm:w-64 md:w-80 lg:w-80 aspect-[2/3] rounded-2xl bg-primary/5 flex items-center justify-center border border-primary/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                                    <svg className="w-20 h-20 text-primary/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
                                     </svg>
                                 </div>
@@ -90,7 +90,7 @@ function HeroSlider({ posts }) {
                             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black uppercase tracking-tighter leading-[1.1] break-words hyphens-auto w-full">
                                 {current.title}
                             </h1>
-                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 md:gap-4 text-gray-400 font-bold uppercase tracking-widest text-[10px] sm:text-xs md:text-sm">
+                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 md:gap-4 text-primary/70 font-bold uppercase tracking-widest text-[10px] sm:text-xs md:text-sm">
                                 <span className="text-primary">★ {current.rating}/10</span>
                             </div>
                         </div>
@@ -109,7 +109,7 @@ function HeroSlider({ posts }) {
                                         </svg>
                                         WATCH NOW
                                     </span>
-                                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                                    <div className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                                 </a>
                             ) : (
                                 <button className="group relative bg-red-600 text-white px-6 sm:px-10 py-3 sm:py-5 rounded-2xl font-black text-sm sm:text-base md:text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(220,38,38,0.5)]">
@@ -119,7 +119,7 @@ function HeroSlider({ posts }) {
                                         </svg>
                                         WATCH NOW
                                     </span>
-                                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                                    <div className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                                 </button>
                             )}
                         </div>
@@ -140,7 +140,7 @@ function HeroSlider({ posts }) {
                                         {thumb ? (
                                             <img src={thumb} className="w-full h-full object-cover" alt="" />
                                         ) : (
-                                            <div className="w-full h-full bg-white/5 flex items-center justify-center text-white/30 text-xs font-bold">
+                                            <div className="w-full h-full bg-primary/5 flex items-center justify-center text-primary/50 text-xs font-bold">
                                                 {idx + 1}
                                             </div>
                                         )}
@@ -158,7 +158,7 @@ function HeroSlider({ posts }) {
                     <button
                         key={idx}
                         onClick={() => setActive(idx)}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${active === idx ? 'w-8 bg-primary' : 'w-1.5 bg-white/30 hover:bg-white/50'
+                        className={`h-1.5 rounded-full transition-all duration-300 ${active === idx ? 'w-8 bg-primary' : 'w-1.5 bg-primary/30 hover:bg-primary/50'
                             }`}
                     />
                 ))}
@@ -176,17 +176,17 @@ function PostCard({ post }) {
 
     return (
         <Wrapper {...wrapperProps} className="group cursor-pointer block">
-            <div className="relative aspect-[2/3] rounded-2xl overflow-hidden mb-5 shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:-translate-y-2 border border-white/5">
+            <div className="relative aspect-[2/3] rounded-2xl overflow-hidden mb-5 shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:-translate-y-2 border border-primary/10">
                 {imageUrl ? (
                     <img src={imageUrl} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-white/5 text-white/20">
+                    <div className="w-full h-full flex items-center justify-center bg-primary/5 text-primary/40">
                         <svg className="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
                         </svg>
                     </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                     <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(220,38,38,0.5)] transition-all duration-300">
                         <svg className="w-7 h-7 text-white ml-1 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
@@ -204,7 +204,7 @@ function PostCard({ post }) {
                 <h3 className="font-bold text-base uppercase tracking-tight group-hover:text-primary transition-colors leading-tight">
                     {post.title}
                 </h3>
-                <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-gray-500">
+                <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-primary/60">
                     {post.category && <span className="text-primary/70">{post.category.name}</span>}
                 </div>
             </div>
@@ -249,7 +249,7 @@ function CategorySection({ category, posts }) {
                 </div>
                 <Link
                     href={`/${category.slug}`}
-                    className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/40 hover:text-primary transition-colors duration-300"
+                    className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary/60 hover:text-primary transition-colors duration-300"
                 >
                     View All
                     <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -295,7 +295,7 @@ export default function Home({ featuredPosts, categorySections }) {
             {/* Empty state when no content at all */}
             {posts.length === 0 && sections.length === 0 && (
                 <div className="py-24 max-w-7xl mx-auto px-6 text-center">
-                    <p className="text-white/20 text-sm uppercase tracking-widest">
+                    <p className="text-primary/40 text-sm uppercase tracking-widest">
                         No content yet — add posts in the admin panel
                     </p>
                 </div>

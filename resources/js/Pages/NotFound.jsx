@@ -19,10 +19,10 @@ export default function NotFound() {
                     </div>
 
                     <div className="mt-4 md:mt-8 animate-fade-in-down" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
-                        <h2 className="font-36 md:font-48 font-bold text-gray-900 mb-4 uppercase tracking-widest">
+                        <h2 className="font-36 md:font-48 font-bold text-primary mb-4 uppercase tracking-widest">
                             Page Not Found
                         </h2>
-                        <p className="text-gray-400 font-18 max-w-lg mx-auto mb-10 font-light leading-relaxed">
+                        <p className="text-primary/70 font-18 max-w-lg mx-auto mb-10 font-light leading-relaxed">
                             The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
                         </p>
 
@@ -37,7 +37,7 @@ export default function NotFound() {
 
                 {/* Abstract Floating Elements */}
                 <div className="absolute top-1/4 left-10 md:left-20 w-16 h-16 md:w-32 md:h-32 border border-primary/30 rounded-full pointer-events-none opacity-50 animate-pulse"></div>
-                <div className="absolute bottom-1/4 right-10 md:right-20 w-32 h-32 md:w-64 md:h-64 border border-white/10 rounded-full pointer-events-none opacity-50"></div>
+                <div className="absolute bottom-1/4 right-10 md:right-20 w-32 h-32 md:w-64 md:h-64 border border-primary/20 rounded-full pointer-events-none opacity-50"></div>
             </div>
         </AppLayout>
     );

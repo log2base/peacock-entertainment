@@ -38,10 +38,10 @@ export default function About() {
             <main className="max-w-5xl mx-auto px-6 py-12 md:py-24 space-y-20">
                 {/* Intro Text */}
                 <div className="space-y-8 text-center md:text-left">
-                    <p className="font-24 text-gray-300 leading-relaxed font-light italic border-l-0 md:border-l-4 border-primary md:pl-8">
+                    <p className="font-24 text-gray-500 leading-relaxed font-light italic border-l-0 md:border-l-4 border-primary md:pl-8">
                         PEACOCK ENTERTAINMENT is a video and motion picture production house based in Dhaka, Bangladesh. The Company was founded in 2024 with the aim of creating world-class cinematic content. It’s an entertainment platform designed to promote arts and to provide an inside look into the lifestyles of people from different creative fields.
                     </p>
-                    <p className="font-18 text-gray-400 leading-relaxed md:ml-8">
+                    <p className="font-18 text-primary/70 leading-relaxed md:ml-8">
                         We produce entertainment content for the global audience by researching the trends that resonate with fans. PEACOCK also provides promotional services for creative individuals, organizations, and companies, offering a powerful platform to showcase talent and creativity.
                     </p>
                 </div>

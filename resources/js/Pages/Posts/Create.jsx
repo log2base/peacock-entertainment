@@ -14,7 +14,7 @@ const Toggle = ({ checked, onChange, label, disabled, hint }) => (
                 disabled ? 'cursor-not-allowed opacity-40' : 'cursor-pointer'
             } ${checked ? 'bg-amber-500' : 'bg-slate-600'}`}
         >
-            <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${checked ? 'translate-x-6' : 'translate-x-1'}`} />
+            <span className={`inline-block h-4 w-4 transform rounded-full bg-primary transition-transform ${checked ? 'translate-x-6' : 'translate-x-1'}`} />
         </button>
         <div>
             <span className="text-sm font-medium text-slate-300">{label}</span>
@@ -32,7 +32,7 @@ const StatusToggle = ({ checked, onChange }) => (
             onClick={() => onChange(!checked)}
             className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:ring-offset-2 focus:ring-offset-slate-900 cursor-pointer ${checked ? 'bg-indigo-500' : 'bg-slate-600'}`}
         >
-            <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${checked ? 'translate-x-6' : 'translate-x-1'}`} />
+            <span className={`inline-block h-4 w-4 transform rounded-full bg-primary transition-transform ${checked ? 'translate-x-6' : 'translate-x-1'}`} />
         </button>
         <span className="text-sm font-medium text-slate-300">Active (visible to users)</span>
     </div>
@@ -41,10 +41,10 @@ const StatusToggle = ({ checked, onChange }) => (
 const FieldError = ({ error }) => error ? <p className="mt-2 text-sm text-rose-400">{error}</p> : null
 
 const inputCls = (error) =>
-    `w-full rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all focus:bg-white/[0.07] focus:ring-2 ${
+    `w-full rounded-xl border bg-primary/5 px-4 py-3 text-sm text-primary placeholder-slate-500 outline-none transition-all focus:bg-primary/[0.07] focus:ring-2 ${
         error
             ? 'border-rose-500/50 focus:border-rose-500/50 focus:ring-rose-500/20'
-            : 'border-white/10 focus:border-indigo-500/50 focus:ring-indigo-500/20'
+            : 'border-primary/20 focus:border-indigo-500/50 focus:ring-indigo-500/20'
     }`
 
 export default function PostCreate({ categories, featuredCount }) {
@@ -79,18 +79,18 @@ export default function PostCreate({ categories, featuredCount }) {
             <div className="mx-auto max-w-2xl">
                 {/* Header */}
                 <div className="mb-8 flex items-center gap-4">
-                    <Link href="/admin/posts" className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-slate-400 transition-all hover:bg-white/10 hover:text-white">
+                    <Link href="/admin/posts" className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 text-slate-400 transition-all hover:bg-primary/10 hover:text-primary">
                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
                     </Link>
                     <div>
-                        <h2 className="text-2xl font-bold text-white">Create Post</h2>
+                        <h2 className="text-2xl font-bold text-primary">Create Post</h2>
                         <p className="mt-1 text-sm text-slate-400">Add a new post to your platform</p>
                     </div>
                 </div>
 
-                <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-sm sm:p-8">
+                <div className="rounded-2xl border border-primary/20 bg-primary/[0.02] p-6 backdrop-blur-sm sm:p-8">
                     <form onSubmit={handleSubmit} className="space-y-6" encType="multipart/form-data">
 
                         {/* Category */}
@@ -104,9 +104,9 @@ export default function PostCreate({ categories, featuredCount }) {
                                 onChange={(e) => setData('category_id', e.target.value)}
                                 className={`${inputCls(errors.category_id)} bg-slate-900`}
                             >
-                                <option value="" className="bg-slate-900 text-white">— No category —</option>
+                                <option value="" className="bg-slate-900 text-primary">— No category —</option>
                                 {categories?.map((cat) => (
-                                    <option key={cat.id} value={cat.id} className="bg-slate-900 text-white">{cat.name}</option>
+                                    <option key={cat.id} value={cat.id} className="bg-slate-900 text-primary">{cat.name}</option>
                                 ))}
                             </select>
                             <FieldError error={errors.category_id} />
@@ -133,7 +133,7 @@ export default function PostCreate({ categories, featuredCount }) {
                             <label className="mb-2 block text-sm font-medium text-slate-300">Cover Image</label>
                             <div
                                 onClick={() => fileRef.current?.click()}
-                                className="group relative flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-white/10 bg-white/[0.02] p-6 transition-all hover:border-indigo-500/40 hover:bg-white/[0.05]"
+                                className="group relative flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-primary/20 bg-primary/[0.02] p-6 transition-all hover:border-indigo-500/40 hover:bg-primary/[0.05]"
                             >
                                 {preview ? (
                                     <img src={preview} alt="Preview" className="max-h-48 w-auto rounded-lg object-cover" />
@@ -169,7 +169,7 @@ export default function PostCreate({ categories, featuredCount }) {
                                 min="0" max="10" step="0.5"
                                 value={data.rating}
                                 onChange={(e) => setData('rating', e.target.value)}
-                                className="h-2 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-indigo-500"
+                                className="h-2 w-full cursor-pointer appearance-none rounded-full bg-primary/10 accent-indigo-500"
                             />
                             <div className="mt-1 flex justify-between text-xs text-slate-600">
                                 <span>0</span><span>5</span><span>10</span>
@@ -190,7 +190,7 @@ export default function PostCreate({ categories, featuredCount }) {
                         </div>
 
                         {/* Toggles */}
-                        <div className="flex flex-col gap-4 rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                        <div className="flex flex-col gap-4 rounded-xl border border-primary/20 bg-primary/[0.02] p-4">
                             <StatusToggle
                                 checked={data.status}
                                 onChange={(v) => setData('status', v)}
@@ -206,12 +206,12 @@ export default function PostCreate({ categories, featuredCount }) {
                         <FieldError error={errors.is_featured} />
 
                         {/* Actions */}
-                        <div className="mt-8 flex items-center justify-end gap-4 border-t border-white/10 pt-6">
-                            <Link href="/admin/posts" className="rounded-xl px-5 py-2.5 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white">
+                        <div className="mt-8 flex items-center justify-end gap-4 border-t border-primary/20 pt-6">
+                            <Link href="/admin/posts" className="rounded-xl px-5 py-2.5 text-sm font-medium text-slate-300 transition-colors hover:bg-primary/5 hover:text-primary">
                                 Cancel
                             </Link>
                             <button type="submit" disabled={processing}
-                                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50">
+                                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-2.5 text-sm font-semibold text-primary shadow-lg shadow-indigo-500/25 transition-all hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50">
                                 {processing ? (
                                     <>
                                         <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24">

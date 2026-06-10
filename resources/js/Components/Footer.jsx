@@ -1,19 +1,22 @@
 import React from 'react';
-import { Link } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 import Logo from './Logo';
 
 export default function Footer() {
+    const { props } = usePage();
+    const categories = props.globalCategories || [];
+
     return (
-        <footer className="bg-[#0c101b] pt-32 pb-12 border-t border-white/10">
+        <footer className="bg-secondary pt-32 pb-12 border-t border-primary/20">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 pb-24 text-center sm:text-left">
                 <div className="space-y-8 col-span-1 lg:col-span-1">
                     <Logo className="scale-125 origin-left" />
-                    <p className="text-white/60 font-14 leading-relaxed max-w-xs font-medium">
+                    <p className="text-primary/80 font-14 leading-relaxed max-w-xs font-medium">
                         PEACOCK ENTERTAINMENT is a visionary motion picture production house. We craft immersive stories that resonate globally, blending art with cutting-edge technology.
                     </p>
                     {/* <div className="flex gap-4">
                         {['FB', 'YT', 'IG', 'X'].map((social) => (
-                            <div key={social} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center font-10 font-black hover:bg-primary hover:text-secondary hover:border-primary transition-all cursor-pointer">
+                            <div key={social} className="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center font-10 font-black hover:bg-primary hover:text-secondary hover:border-primary transition-all cursor-pointer">
                                 {social}
                             </div>
                         ))}
@@ -24,14 +27,16 @@ export default function Footer() {
                 <div className="space-y-8">
                     <h4 className="font-12 font-black uppercase tracking-[0.3em] text-primary">Categories</h4>
                     <ul className="space-y-4">
-                        {[
-                            { name: 'Single Drama', href: '/single-drama' },
-                            { name: 'TV Series', href: '/television-series' },
-                            { name: 'Music Videos', href: '/music' },
-                            { name: 'Cinema', href: '/cinema' },
-                        ].map((item) => (
+                        {(categories.length > 0 ? categories.map(cat => ({
+                            name: cat.name,
+                            href: `/${cat.slug}`
+                        })) : [
+                            { name: 'Drama', href: '/drama' },
+                            { name: 'TV Series', href: '/tv-series' },
+                            { name: 'Music', href: '/music' },
+                        ]).map((item) => (
                             <li key={item.name}>
-                                <Link href={item.href} className="text-white/50 hover:text-white transition-colors font-12 font-bold uppercase tracking-widest">{item.name}</Link>
+                                <Link href={item.href} className="text-primary/70 hover:text-primary transition-colors font-12 font-bold uppercase tracking-widest">{item.name}</Link>
                             </li>
                         ))}
                     </ul>
@@ -40,16 +45,19 @@ export default function Footer() {
                 <div className="space-y-8">
                     <h4 className="font-12 font-black uppercase tracking-[0.3em] text-primary">Quick Links</h4>
                     <ul className="space-y-4">
-                        {['About Us', 'Contact'].map((item) => (
-                            <li key={item}>
-                                <Link href="#" className="text-white/50 hover:text-white transition-colors font-12 font-bold uppercase tracking-widest">{item}</Link>
+                        {[
+                            { name: 'About Us', href: '/about' },
+                            { name: 'Contact', href: '/contact' }
+                        ].map((item) => (
+                            <li key={item.name}>
+                                <Link href={item.href} className="text-primary/70 hover:text-primary transition-colors font-12 font-bold uppercase tracking-widest">{item.name}</Link>
                             </li>
                         ))}
                     </ul>
                 </div>
                 <div className="space-y-8">
                     <h4 className="font-12 font-black uppercase tracking-[0.3em] text-primary">Reach Us</h4>
-                    <div className="space-y-6 text-white/50 font-12 font-bold uppercase tracking-widest leading-loose">
+                    <div className="space-y-6 text-primary/70 font-12 font-bold uppercase tracking-widest leading-loose">
                         <p className="flex items-start gap-4">
                             <span className="text-primary font-18">📍</span>
                             Flat 10E, House 10, Road 2/2, Banani, Dhaka-1213
@@ -66,12 +74,12 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 font-10 font-black uppercase tracking-[0.3em] text-white/40 text-center md:text-left">
+            <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center gap-8 font-10 font-black uppercase tracking-[0.3em] text-primary/60 text-center md:text-left">
                 <p>© {new Date().getFullYear()} PEACOCK ENTERTAINMENT. BEYOND IMAGINATION.</p>
                 {/* <div className="flex gap-10">
-                    <Link href="#" className="hover:text-gray-900 transition-colors">Privacy</Link>
-                    <Link href="#" className="hover:text-gray-900 transition-colors">Terms</Link>
-                    <Link href="#" className="hover:text-gray-900 transition-colors">Support</Link>
+                    <Link href="#" className="hover:text-primary transition-colors">Privacy</Link>
+                    <Link href="#" className="hover:text-primary transition-colors">Terms</Link>
+                    <Link href="#" className="hover:text-primary transition-colors">Support</Link>
                 </div> */}
             </div>
         </footer>
