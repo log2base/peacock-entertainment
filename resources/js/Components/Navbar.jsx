@@ -44,7 +44,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className="bg-[#0c101b]/80 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50 transition-all duration-500">
+        <nav className="bg-secondary/80 backdrop-blur-xl border-b border-primary/10 sticky top-0 z-50 transition-all duration-500">
             <div className="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
                 <Logo className="scale-110" />
 
@@ -57,7 +57,7 @@ export default function Navbar() {
                                     onMouseEnter={() => setOpenDropdown(link.name)}
                                     className={`flex items-center gap-2 transition-all duration-300 hover:text-primary group ${isActive(link.href) || openDropdown === link.name
                                         ? 'text-primary'
-                                        : 'text-white/70'
+                                        : 'text-primary/70'
                                         }`}
                                 >
                                     {link.name}
@@ -68,9 +68,9 @@ export default function Navbar() {
                             ) : (
                                 <Link
                                     href={link.href}
-                                    className={`relative transition-all duration-300 hover:text-white group ${isActive(link.href)
+                                    className={`relative transition-all duration-300 hover:text-primary group ${isActive(link.href)
                                         ? 'text-primary'
-                                        : 'text-white/70'
+                                        : 'text-primary/70'
                                         }`}
                                 >
                                     {link.name}
@@ -82,13 +82,13 @@ export default function Navbar() {
                             {link.dropdown && openDropdown === link.name && (
                                 <div
                                     onMouseLeave={() => setOpenDropdown(null)}
-                                    className="absolute top-full -left-4 mt-0 w-64 bg-[#0f171e] shadow-2xl border-t-2 border-primary overflow-hidden animate-fade-in-down py-2"
+                                    className="absolute top-full -left-4 mt-0 w-64 bg-[#e6b000] shadow-2xl border-t-2 border-primary overflow-hidden animate-fade-in-down py-2"
                                 >
                                     {link.dropdown.map((item) => (
                                         <Link
                                             key={item.name}
                                             href={item.href}
-                                            className="block px-8 py-4 text-white/80 hover:bg-white/5 hover:text-primary transition-all font-bold font-10 uppercase tracking-widest"
+                                            className="block px-8 py-4 text-primary/80 hover:bg-primary/5 hover:text-primary transition-all font-bold font-10 uppercase tracking-widest"
                                         >
                                             {item.name}
                                         </Link>
@@ -107,16 +107,16 @@ export default function Navbar() {
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     <div className="w-6 h-5 flex flex-col justify-between">
-                        <span className={`h-0.5 w-full bg-white transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                        <span className={`h-0.5 w-full bg-white transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-                        <span className={`h-0.5 w-full bg-white transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+                        <span className={`h-0.5 w-full bg-primary transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                        <span className={`h-0.5 w-full bg-primary transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+                        <span className={`h-0.5 w-full bg-primary transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
                     </div>
                 </button>
             </div>
 
             {/* Mobile Nav */}
             {isMenuOpen && (
-                <div className="lg:hidden absolute top-full left-0 w-full bg-[#0c101b] border-t border-white/10 px-8 py-10 pb-32 space-y-8 animate-fade-in h-[calc(100vh-6rem)] overflow-y-auto shadow-2xl">
+                <div className="lg:hidden absolute top-full left-0 w-full bg-secondary border-t border-primary/10 px-8 py-10 pb-32 space-y-8 animate-fade-in h-[calc(100vh-6rem)] overflow-y-auto shadow-2xl">
                     {navLinks.map((link) => (
                         <div key={link.name}>
                             {link.dropdown ? (
@@ -124,12 +124,12 @@ export default function Navbar() {
                                     <div className="font-12 font-black uppercase tracking-[0.2em] text-primary flex items-center justify-between">
                                         {link.name}
                                     </div>
-                                    <div className="pl-6 space-y-6 border-l-2 border-white/10">
+                                    <div className="pl-6 space-y-6 border-l-2 border-primary/10">
                                         {link.dropdown.map((item) => (
                                             <Link
                                                 key={item.name}
                                                 href={item.href}
-                                                className="block font-10 font-bold uppercase tracking-widest text-white/50 hover:text-white"
+                                                className="block font-10 font-bold uppercase tracking-widest text-primary/50 hover:text-primary"
                                                 onClick={() => setIsMenuOpen(false)}
                                             >
                                                 {item.name}
@@ -140,7 +140,7 @@ export default function Navbar() {
                             ) : (
                                 <Link
                                     href={link.href}
-                                    className={`block font-12 font-black uppercase tracking-[0.2em] hover:text-white transition-colors ${isActive(link.href) ? 'text-primary' : 'text-white/70'
+                                    className={`block font-12 font-black uppercase tracking-[0.2em] hover:text-primary transition-colors ${isActive(link.href) ? 'text-primary' : 'text-primary/70'
                                         }`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >

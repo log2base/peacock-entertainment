@@ -3,7 +3,7 @@ import React from 'react';
 export default function ServiceCard({ title, description, image }) {
     return (
         <div className="space-y-8 group text-center md:text-left">
-            <div className="aspect-video bg-[#15202b] rounded-3xl overflow-hidden border border-gray-800 group-hover:border-primary/50 transition-colors shadow-2xl">
+            <div className="aspect-video bg-[#e6b000] rounded-3xl overflow-hidden border border-primary/20 group-hover:border-primary/50 transition-colors shadow-2xl">
                 <img
                     src={image}
                     alt={title}
@@ -14,7 +14,7 @@ export default function ServiceCard({ title, description, image }) {
                 <h3 className="font-24 font-bold text-primary uppercase tracking-wider">
                     {title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed font-16">
+                <p className="text-primary/70 leading-relaxed font-16">
                     {description}
                 </p>
             </div>

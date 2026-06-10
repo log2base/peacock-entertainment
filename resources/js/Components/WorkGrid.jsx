@@ -44,7 +44,7 @@ export default function WorkGrid({ title, subtitle, items }) {
                                 <h3 className="font-bold text-xl uppercase tracking-tight group-hover:text-primary transition-colors">
                                     {item.title}
                                 </h3>
-                                <div className="flex items-center justify-center lg:justify-start gap-3 text-xs font-bold uppercase tracking-widest text-gray-900/60">
+                                <div className="flex items-center justify-center lg:justify-start gap-3 text-xs font-bold uppercase tracking-widest text-primary/60">
                                     <span>{item.year || '2024'}</span>
                                     <span className="w-1 h-1 bg-gray-200 rounded-full"></span>
                                     <span>{item.tag || 'Premium'}</span>

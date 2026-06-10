@@ -19,7 +19,7 @@ export default function HeroHeader({ title, subtitle, bgImage }) {
                     {title}
                 </h1>
                 {subtitle && (
-                    <div className="flex items-center justify-center gap-2 font-14 font-bold uppercase tracking-[0.2em] text-gray-400">
+                    <div className="flex items-center justify-center gap-2 font-14 font-bold uppercase tracking-[0.2em] text-primary/70">
                         <Link href="/" className="hover:text-primary transition-colors">Home</Link>
                         <span className="text-primary">»</span>
                         <span>{subtitle}</span>
