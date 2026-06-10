@@ -19,7 +19,7 @@ export default function NotFound() {
                     </div>
                     
                     <div className="mt-4 md:mt-8 animate-fade-in-down" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
-                        <h2 className="font-36 md:font-48 font-bold text-white mb-4 uppercase tracking-widest">
+                        <h2 className="font-36 md:font-48 font-bold text-gray-900 mb-4 uppercase tracking-widest">
                             Page Not Found
                         </h2>
                         <p className="text-gray-400 font-18 max-w-lg mx-auto mb-10 font-light leading-relaxed">

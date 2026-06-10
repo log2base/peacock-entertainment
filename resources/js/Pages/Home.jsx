@@ -101,7 +101,7 @@ function HeroSlider({ posts }) {
                                     href={current.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group relative bg-primary text-secondary px-6 sm:px-10 py-3 sm:py-5 rounded-2xl font-black text-sm sm:text-base md:text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,195,0,0.4)]"
+                                    className="group relative bg-red-600 text-white px-6 sm:px-10 py-3 sm:py-5 rounded-2xl font-black text-sm sm:text-base md:text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(220,38,38,0.5)]"
                                 >
                                     <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
                                         <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -112,7 +112,7 @@ function HeroSlider({ posts }) {
                                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                                 </a>
                             ) : (
-                                <button className="group relative bg-primary text-secondary px-6 sm:px-10 py-3 sm:py-5 rounded-2xl font-black text-sm sm:text-base md:text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,195,0,0.4)]">
+                                <button className="group relative bg-red-600 text-white px-6 sm:px-10 py-3 sm:py-5 rounded-2xl font-black text-sm sm:text-base md:text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(220,38,38,0.5)]">
                                     <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
                                         <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M4.5 3.5v13l11-6.5-11-6.5z" />

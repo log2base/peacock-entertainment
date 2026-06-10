@@ -14,7 +14,7 @@ function PostCard({ post }) {
             className="group cursor-pointer block"
         >
             {/* Poster */}
-            <div className="relative aspect-[2/3] rounded-2xl overflow-hidden mb-5 shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:-translate-y-2 border border-white/5 group-hover:border-primary/30">
+            <div className="relative aspect-[2/3] rounded-2xl overflow-hidden mb-5 shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:-translate-y-2 border border-gray-200 group-hover:border-primary/30">
                 {post.image ? (
                     <img
                         src={`/storage/${post.image}`}
@@ -22,7 +22,7 @@ function PostCard({ post }) {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-white/5 text-white/20">
+                    <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-900/40">
                         <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
                         </svg>
@@ -30,7 +30,7 @@ function PostCard({ post }) {
                 )}
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c101b] via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
 
                 {/* Play button */}
                 {post.url && (
@@ -61,7 +61,7 @@ function PostCard({ post }) {
                 <h3 className="font-bold text-lg uppercase tracking-tight group-hover:text-primary transition-colors leading-tight">
                     {post.title}
                 </h3>
-                <div className="flex items-center justify-center lg:justify-start gap-3 text-xs font-bold uppercase tracking-widest text-white/40">
+                <div className="flex items-center justify-center lg:justify-start gap-3 text-xs font-bold uppercase tracking-widest text-gray-900/60">
                     <span>{post.rating}/10</span>
                 </div>
             </div>
@@ -75,7 +75,7 @@ function Pagination({ links, lastPage }) {
         <div className="mt-16 flex items-center justify-center gap-2 flex-wrap">
             {links.map((link, index) => {
                 if (!link.url && link.label === '...') {
-                    return <span key={index} className="px-3 py-2 text-white/30 text-sm">…</span>;
+                    return <span key={index} className="px-3 py-2 text-gray-900/50 text-sm">…</span>;
                 }
                 return (
                     <Link
@@ -85,8 +85,8 @@ function Pagination({ links, lastPage }) {
                         className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${link.active
                                 ? 'bg-primary text-secondary shadow-lg shadow-primary/25'
                                 : link.url
-                                    ? 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white border border-white/5'
-                                    : 'cursor-not-allowed text-white/20 bg-white/[0.02]'
+                                    ? 'bg-gray-100 text-gray-900/80 hover:bg-gray-200 hover:text-gray-900 border border-gray-200'
+                                    : 'cursor-not-allowed text-gray-900/40 bg-white/[0.02]'
                             }`}
                         dangerouslySetInnerHTML={{ __html: link.label }}
                     />
@@ -110,7 +110,7 @@ export default function Category({ category, posts }) {
                         </h1>
                         <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
                         {posts?.total > 0 && (
-                            <p className="text-white/40 text-sm font-medium uppercase tracking-widest">
+                            <p className="text-gray-900/60 text-sm font-medium uppercase tracking-widest">
                                 {posts.total} {posts.total === 1 ? 'title' : 'titles'}
                             </p>
                         )}
@@ -128,11 +128,11 @@ export default function Category({ category, posts }) {
                         </>
                     ) : (
                         <div className="flex flex-col items-center justify-center py-20">
-                            <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mb-6 text-3xl">
+                            <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-6 text-3xl">
                                 🎬
                             </div>
-                            <p className="text-white/40 text-lg font-medium">No titles available yet</p>
-                            <p className="text-white/20 text-sm mt-2">Check back soon for new content</p>
+                            <p className="text-gray-900/60 text-lg font-medium">No titles available yet</p>
+                            <p className="text-gray-900/40 text-sm mt-2">Check back soon for new content</p>
                         </div>
                     )}
                 </div>

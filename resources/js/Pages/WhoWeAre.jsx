@@ -58,7 +58,7 @@ export default function WhoWeAre() {
                             </div>
 
                             {/* Details */}
-                            <h3 className="text-white font-bold text-lg mb-2 uppercase tracking-wider h-14 flex items-center justify-center group-hover:text-primary transition-colors">
+                            <h3 className="text-gray-900 font-bold text-lg mb-2 uppercase tracking-wider h-14 flex items-center justify-center group-hover:text-primary transition-colors">
                                 {member.name}
                             </h3>
                             <p className="text-gray-400 font-bold text-xs uppercase tracking-widest mb-6">

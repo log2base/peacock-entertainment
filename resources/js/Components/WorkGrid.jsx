@@ -17,13 +17,13 @@ export default function WorkGrid({ title, subtitle, items }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
                     {items.map((item, idx) => (
                         <div key={idx} className="group cursor-pointer">
-                            <div className="relative aspect-[2/3] rounded-2xl overflow-hidden mb-6 shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:-translate-y-2 border border-white/5 group-hover:border-primary/30">
+                            <div className="relative aspect-[2/3] rounded-2xl overflow-hidden mb-6 shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:-translate-y-2 border border-gray-200 group-hover:border-primary/30">
                                 <img 
                                     src={item.image} 
                                     alt={item.title} 
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0c101b] via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
                                 
                                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                                     <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,195,0,0.5)]">
@@ -44,9 +44,9 @@ export default function WorkGrid({ title, subtitle, items }) {
                                 <h3 className="font-bold text-xl uppercase tracking-tight group-hover:text-primary transition-colors">
                                     {item.title}
                                 </h3>
-                                <div className="flex items-center justify-center lg:justify-start gap-3 text-xs font-bold uppercase tracking-widest text-white/40">
+                                <div className="flex items-center justify-center lg:justify-start gap-3 text-xs font-bold uppercase tracking-widest text-gray-900/60">
                                     <span>{item.year || '2024'}</span>
-                                    <span className="w-1 h-1 bg-white/10 rounded-full"></span>
+                                    <span className="w-1 h-1 bg-gray-200 rounded-full"></span>
                                     <span>{item.tag || 'Premium'}</span>
                                 </div>
                             </div>
