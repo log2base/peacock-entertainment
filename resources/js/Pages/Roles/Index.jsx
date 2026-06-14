@@ -21,14 +21,14 @@ export default function RolesIndex({ roles, filters }) {
             {/* Header */}
             <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                    <h2 className="text-2xl font-bold text-primary">All Roles</h2>
+                    <h2 className="text-2xl font-bold text-white">All Roles</h2>
                     <p className="mt-1 text-sm text-slate-400">
                         Manage roles and their associated permissions
                     </p>
                 </div>
                 <Link
                     href="/admin/roles/create"
-                    className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 px-5 py-2.5 text-sm font-semibold text-primary shadow-lg shadow-indigo-500/25 transition-all hover:shadow-xl hover:shadow-indigo-500/30 hover:brightness-110 active:scale-[0.98]"
+                    className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:shadow-xl hover:shadow-indigo-500/30 hover:brightness-110 active:scale-[0.98]"
                 >
                     <span className="text-lg">+</span>
                     Create Role
@@ -43,7 +43,7 @@ export default function RolesIndex({ roles, filters }) {
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                         placeholder="Search roles..."
-                        className="w-full rounded-xl border border-primary/20 bg-primary/5 py-2.5 pl-10 pr-4 text-sm text-primary placeholder-slate-500 outline-none ring-indigo-500/50 transition-all focus:border-indigo-500/50 focus:bg-primary/[0.07] focus:ring-2 backdrop-blur-sm"
+                        className="w-full rounded-xl border border-primary/20 bg-primary/5 py-2.5 pl-10 pr-4 text-sm text-white placeholder-slate-500 outline-none ring-indigo-500/50 transition-all focus:border-indigo-500/50 focus:bg-primary/[0.07] focus:ring-2 backdrop-blur-sm"
                     />
                     <svg className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -67,7 +67,7 @@ export default function RolesIndex({ roles, filters }) {
                             {/* Role name & badge */}
                             <div className="mb-4 flex items-start justify-between">
                                 <div>
-                                    <h3 className="text-lg font-semibold text-primary capitalize">
+                                    <h3 className="text-lg font-semibold text-white capitalize">
                                         {role.name}
                                     </h3>
                                     <span className="mt-1 inline-block rounded-full bg-indigo-500/10 px-2.5 py-0.5 text-[11px] font-medium text-indigo-300">
@@ -100,13 +100,13 @@ export default function RolesIndex({ roles, filters }) {
                             <div className="flex items-center gap-2 border-t border-primary/10 pt-4">
                                 <Link
                                     href={`/admin/roles/${role.id}`}
-                                    className="rounded-lg bg-primary/5 px-3 py-1.5 text-xs font-medium text-slate-300 transition-all hover:bg-primary/10 hover:text-primary"
+                                    className="rounded-lg bg-primary/5 px-3 py-1.5 text-xs font-medium text-slate-300 transition-all hover:bg-primary/10 hover:text-white"
                                 >
                                     View
                                 </Link>
                                 <Link
                                     href={`/admin/roles/${role.id}/edit`}
-                                    className="rounded-lg bg-primary/5 px-3 py-1.5 text-xs font-medium text-slate-300 transition-all hover:bg-primary/10 hover:text-primary"
+                                    className="rounded-lg bg-primary/5 px-3 py-1.5 text-xs font-medium text-slate-300 transition-all hover:bg-primary/10 hover:text-white"
                                 >
                                     Edit
                                 </Link>
@@ -128,7 +128,7 @@ export default function RolesIndex({ roles, filters }) {
             {(!roles.data || roles.data.length === 0) && (
                 <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-primary/20 py-16">
                     <div className="mb-4 text-4xl">🛡️</div>
-                    <h3 className="text-lg font-semibold text-primary">No roles found</h3>
+                    <h3 className="text-lg font-semibold text-white">No roles found</h3>
                     <p className="mt-1 text-sm text-slate-500">Create your first role to get started</p>
                 </div>
             )}
@@ -144,7 +144,7 @@ export default function RolesIndex({ roles, filters }) {
                                 link.active
                                     ? 'bg-indigo-500/20 text-indigo-300'
                                     : link.url
-                                        ? 'text-slate-400 hover:bg-primary/5 hover:text-primary'
+                                        ? 'text-slate-400 hover:bg-primary/5 hover:text-white'
                                         : 'cursor-not-allowed text-slate-600'
                             }`}
                             dangerouslySetInnerHTML={{ __html: link.label }}
