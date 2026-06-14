@@ -102,17 +102,31 @@ class UserRoleController extends Controller
     public function update(Request $request, User $user)
     {
         $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $user->id],
+            'password' => ['nullable', 'string', 'min:8'],
             'roles' => ['nullable', 'array'],
             'roles.*' => ['string', 'exists:roles,name'],
             'permissions' => ['nullable', 'array'],
             'permissions.*' => ['string', 'exists:permissions,name'],
         ]);
 
+        $user->update([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+        ]);
+
+        if (!empty($validated['password'])) {
+            $user->update([
+                'password' => bcrypt($validated['password'])
+            ]);
+        }
+
         $user->syncRoles($validated['roles'] ?? []);
         $user->syncPermissions($validated['permissions'] ?? []);
 
         return redirect()->route('users.roles.index')
-            ->with('success', "Roles and permissions updated for {$user->name}.");
+            ->with('success', "Profile, roles and permissions updated for {$user->name}.");
     }
 
     /**

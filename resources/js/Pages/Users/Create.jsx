@@ -33,7 +33,7 @@ export default function UserCreate({ roles }) {
                         <input type="text" value={data.name} onChange={(e) => setData('name', e.target.value)} required placeholder="e.g., John Doe" className="w-full rounded-xl border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm text-primary placeholder-slate-500 outline-none focus:border-indigo-500/50 focus:ring-2 ring-indigo-500/50" />
                         {errors.name && <p className="mt-2 text-sm text-red-400">{errors.name}</p>}
                     </div>
-                    
+
                     <div className="mb-6">
                         <label className="mb-2 block text-sm font-medium text-slate-300">Email Address <span className="text-red-400">*</span></label>
                         <input type="email" value={data.email} onChange={(e) => setData('email', e.target.value)} required placeholder="john@example.com" className="w-full rounded-xl border border-primary/20 bg-primary/5 px-4 py-2.5 text-sm text-primary placeholder-slate-500 outline-none focus:border-indigo-500/50 focus:ring-2 ring-indigo-500/50" />

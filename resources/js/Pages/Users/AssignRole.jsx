@@ -2,7 +2,10 @@ import { useForm, Link } from '@inertiajs/react'
 import AdminLayout from '../../Layouts/AdminLayout'
 
 export default function AssignRole({ user, roles, permissions, userRoles, userDirectPermissions }) {
-    const { data, setData, put, processing } = useForm({
+    const { data, setData, put, processing, errors } = useForm({
+        name: user.name || '',
+        email: user.email || '',
+        password: '',
         roles: userRoles || [],
         permissions: userDirectPermissions || [],
     })
@@ -35,19 +38,49 @@ export default function AssignRole({ user, roles, permissions, userRoles, userDi
     })
 
     return (
-        <AdminLayout title="Assign Roles & Permissions">
+        <AdminLayout title="Edit User Profile & Roles">
             <Link href="/admin/users/roles" className="mb-6 inline-flex items-center gap-1 text-sm text-slate-400 hover:text-primary">← Back to User Roles</Link>
             <div className="mx-auto max-w-4xl">
-                {/* User Info Card */}
-                <div className="mb-6 flex items-center gap-4 rounded-2xl border border-primary/10 bg-primary/[0.03] p-6 backdrop-blur-sm">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-xl font-bold text-primary shadow-lg shadow-indigo-500/25">{user.name?.charAt(0)}</div>
-                    <div>
-                        <h2 className="text-xl font-bold text-primary">{user.name}</h2>
-                        <p className="text-sm text-slate-400">{user.email}</p>
-                    </div>
-                </div>
-
                 <form onSubmit={submit}>
+                    {/* Profile Information */}
+                    <div className="mb-6 rounded-2xl border border-primary/10 bg-primary/[0.03] p-6 backdrop-blur-sm">
+                        <h3 className="mb-4 text-lg font-semibold text-primary">Profile Information</h3>
+                        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                            <div>
+                                <label className="mb-2 block text-sm font-medium text-slate-300">Name</label>
+                                <input
+                                    type="text"
+                                    value={data.name}
+                                    onChange={(e) => setData('name', e.target.value)}
+                                    required
+                                    className="w-full rounded-xl border border-primary/20 bg-slate-800/50 px-4 py-2.5 text-sm text-white placeholder-slate-500 outline-none ring-indigo-500/50 transition-all focus:border-indigo-500/50 focus:bg-slate-800/70 focus:ring-2 backdrop-blur-sm"
+                                />
+                                {errors.name && <p className="mt-2 text-sm text-red-400">{errors.name}</p>}
+                            </div>
+                            <div>
+                                <label className="mb-2 block text-sm font-medium text-slate-300">Email</label>
+                                <input
+                                    type="email"
+                                    value={data.email}
+                                    onChange={(e) => setData('email', e.target.value)}
+                                    required
+                                    className="w-full rounded-xl border border-primary/20 bg-slate-800/50 px-4 py-2.5 text-sm text-white placeholder-slate-500 outline-none ring-indigo-500/50 transition-all focus:border-indigo-500/50 focus:bg-slate-800/70 focus:ring-2 backdrop-blur-sm"
+                                />
+                                {errors.email && <p className="mt-2 text-sm text-red-400">{errors.email}</p>}
+                            </div>
+                            <div className="md:col-span-2">
+                                <label className="mb-2 block text-sm font-medium text-slate-300">New Password (leave blank to keep current)</label>
+                                <input
+                                    type="password"
+                                    value={data.password}
+                                    onChange={(e) => setData('password', e.target.value)}
+                                    className="w-full rounded-xl border border-primary/20 bg-slate-800/50 px-4 py-2.5 text-sm text-white placeholder-slate-500 outline-none ring-indigo-500/50 transition-all focus:border-indigo-500/50 focus:bg-slate-800/70 focus:ring-2 backdrop-blur-sm"
+                                    placeholder="••••••••"
+                                />
+                                {errors.password && <p className="mt-2 text-sm text-red-400">{errors.password}</p>}
+                            </div>
+                        </div>
+                    </div>
                     {/* Roles Selection */}
                     <div className="mb-6 rounded-2xl border border-primary/10 bg-primary/[0.03] p-6 backdrop-blur-sm">
                         <h3 className="mb-4 text-lg font-semibold text-primary">Roles</h3>

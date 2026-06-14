@@ -36,6 +36,11 @@ Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])-
 |--------------------------------------------------------------------------
 */
 Route::prefix('admin')->middleware('auth')->group(function () {
+    // Profile Settings
+    Route::get('profile', [\App\Http\Controllers\AuthController::class, 'showProfile'])->name('profile');
+    Route::put('profile', [\App\Http\Controllers\AuthController::class, 'updateProfile'])->name('profile.update');
+    Route::put('password', [\App\Http\Controllers\AuthController::class, 'updatePassword'])->name('password.update');
+
     // Roles CRUD
     Route::resource('roles', RoleController::class);
 
@@ -63,4 +68,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 // Dynamic Category Route (Placed at the very end to not override actual routes like /login or /admin)
+Route::get('/{slug}', [HomeController::class, 'category'])->name('works.category');
 Route::get('/{slug}', [HomeController::class, 'category'])->name('works.category');
