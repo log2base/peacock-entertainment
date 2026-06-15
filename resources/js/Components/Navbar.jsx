@@ -44,7 +44,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className="bg-secondary/80 backdrop-blur-xl border-b border-primary/10 sticky top-0 z-50 transition-all duration-500">
+        <nav className="bg-blue-300 backdrop-blur-xl border-b border-primary/10 sticky top-0 z-50 transition-all duration-500">
             <div className="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
                 <Logo className="scale-110" />
 
