@@ -21,7 +21,7 @@ export default function Login() {
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-xl font-bold text-primary shadow-lg shadow-indigo-500/25">
                         P
                     </div>
-                    <h2 className="text-2xl font-bold text-primary tracking-tight">Welcome Back</h2>
+                    <h2 className="text-2xl font-bold text-white tracking-tight">Welcome Back</h2>
                     <p className="mt-1 text-sm text-slate-400">Sign in to your account</p>
                 </div>
 

@@ -20,20 +20,20 @@ export default function CategoryEdit({ category }) {
                 <div className="mb-8 flex items-center gap-4">
                     <Link
                         href="/admin/categories"
-                        className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 text-slate-400 transition-all hover:bg-primary/10 hover:text-primary"
+                        className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-slate-400 transition-all hover:bg-white/10 hover:text-white"
                     >
                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
                     </Link>
                     <div>
-                        <h2 className="text-2xl font-bold text-primary">Edit Category</h2>
+                        <h2 className="text-2xl font-bold text-white">Edit Category</h2>
                         <p className="mt-1 text-sm text-slate-400">Update category information</p>
                     </div>
                 </div>
 
                 {/* Form */}
-                <div className="rounded-2xl border border-primary/20 bg-primary/[0.02] p-6 backdrop-blur-sm sm:p-8">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-sm sm:p-8">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         {/* Name Field */}
                         <div>
@@ -45,10 +45,10 @@ export default function CategoryEdit({ category }) {
                                 type="text"
                                 value={data.name}
                                 onChange={(e) => setData('name', e.target.value)}
-                                className={`w-full rounded-xl border bg-primary/5 px-4 py-3 text-sm text-primary placeholder-slate-500 outline-none transition-all focus:bg-primary/[0.07] focus:ring-2 ${
+                                className={`w-full rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all focus:bg-white/[0.07] focus:ring-2 ${
                                     errors.name 
                                         ? 'border-rose-500/50 focus:border-rose-500/50 focus:ring-rose-500/20' 
-                                        : 'border-primary/20 focus:border-indigo-500/50 focus:ring-indigo-500/20'
+                                        : 'border-white/20 focus:border-indigo-500/50 focus:ring-indigo-500/20'
                                 }`}
                             />
                             {errors.name && (
@@ -66,10 +66,10 @@ export default function CategoryEdit({ category }) {
                                 type="text"
                                 value={data.slug}
                                 onChange={(e) => setData('slug', e.target.value)}
-                                className={`w-full rounded-xl border bg-primary/5 px-4 py-3 text-sm text-primary placeholder-slate-500 outline-none transition-all focus:bg-primary/[0.07] focus:ring-2 ${
+                                className={`w-full rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all focus:bg-white/[0.07] focus:ring-2 ${
                                     errors.slug 
                                         ? 'border-rose-500/50 focus:border-rose-500/50 focus:ring-rose-500/20' 
-                                        : 'border-primary/20 focus:border-indigo-500/50 focus:ring-indigo-500/20'
+                                        : 'border-white/20 focus:border-indigo-500/50 focus:ring-indigo-500/20'
                                 }`}
                             />
                             {errors.slug && (
@@ -89,7 +89,7 @@ export default function CategoryEdit({ category }) {
                                 }`}
                             >
                                 <span
-                                    className={`inline-block h-4 w-4 transform rounded-full bg-primary transition-transform ${
+                                    className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
                                         data.status ? 'translate-x-6' : 'translate-x-1'
                                     }`}
                                 />
@@ -103,17 +103,17 @@ export default function CategoryEdit({ category }) {
                         )}
 
                         {/* Submit Actions */}
-                        <div className="mt-8 flex items-center justify-end gap-4 border-t border-primary/20 pt-6">
+                        <div className="mt-8 flex items-center justify-end gap-4 border-t border-white/10 pt-6">
                             <Link
                                 href="/admin/categories"
-                                className="rounded-xl px-5 py-2.5 text-sm font-medium text-slate-300 transition-colors hover:bg-primary/5 hover:text-primary"
+                                className="rounded-xl px-5 py-2.5 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
                             >
                                 Cancel
                             </Link>
                             <button
                                 type="submit"
                                 disabled={processing}
-                                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-2.5 text-sm font-semibold text-primary shadow-lg shadow-indigo-500/25 transition-all hover:shadow-xl hover:shadow-indigo-500/30 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50"
+                                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:shadow-xl hover:shadow-indigo-500/30 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50"
                             >
                                 {processing ? (
                                     <>

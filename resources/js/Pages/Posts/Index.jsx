@@ -101,7 +101,7 @@ export default function PostsIndex({ posts, featuredCount, filters }) {
             {/* Header */}
             <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                    <h2 className="text-2xl font-bold text-primary">All Posts</h2>
+                    <h2 className="text-2xl font-bold text-white">All Posts</h2>
                     <p className="mt-1 text-sm text-slate-400">
                         {posts.total} post{posts.total !== 1 ? 's' : ''} &nbsp;·&nbsp;
                         <span className={`font-medium ${currentFeaturedCount >= 8 ? 'text-amber-400' : 'text-slate-400'}`}>
@@ -135,13 +135,13 @@ export default function PostsIndex({ posts, featuredCount, filters }) {
             </div>
 
             {/* Featured quota bar */}
-            <div className="mb-6 flex items-center gap-3">
+            <div className="mb-6 flex flex-wrap items-center gap-2 sm:gap-3">
                 <span className="text-xs text-slate-500">Featured slots</span>
-                <div className="flex gap-1.5">
+                <div className="flex gap-1 sm:gap-1.5">
                     {[0, 1, 2, 3, 4, 5, 6, 7].map(i => (
                         <div
                             key={i}
-                            className={`h-2 w-12 rounded-full transition-colors ${
+                            className={`h-2 w-6 rounded-full transition-colors sm:w-12 ${
                                 i < currentFeaturedCount ? 'bg-amber-400' : 'bg-primary/10'
                             }`}
                         />
@@ -187,7 +187,7 @@ export default function PostsIndex({ posts, featuredCount, filters }) {
                                         )}
                                     </td>
                                     <td className="px-4 py-3">
-                                        <div className="font-medium text-primary">{post.title}</div>
+                                        <div className="font-medium text-white">{post.title}</div>
                                         {post.url && (
                                             <a href={post.url} target="_blank" rel="noopener noreferrer"
                                                 className="mt-0.5 block max-w-[180px] truncate text-xs text-indigo-400 hover:text-indigo-300">
