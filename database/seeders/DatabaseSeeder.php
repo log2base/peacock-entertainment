@@ -24,9 +24,9 @@ class DatabaseSeeder extends Seeder
 
         // Create a super-admin user
         $superAdmin = User::factory()->create([
-            'name' => 'Super Admin',
-            'email' => 'admin@peacock.test',
-            'password' => bcrypt('password'),
+            'name' => 'Peacock Entertainment',
+            'email' => 'peacockentertainmentlimited@gmail.com',
+            'password' => bcrypt('ABcd1234$'),
         ]);
         $superAdmin->assignRole('super-admin');
 
