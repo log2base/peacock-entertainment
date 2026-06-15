@@ -41,7 +41,7 @@ const StatusToggle = ({ checked, onChange }) => (
 const FieldError = ({ error }) => error ? <p className="mt-2 text-sm text-rose-400">{error}</p> : null
 
 const inputCls = (error) =>
-    `w-full rounded-xl border bg-primary/5 px-4 py-3 text-sm text-primary placeholder-slate-500 outline-none transition-all focus:bg-primary/[0.07] focus:ring-2 ${
+    `w-full rounded-xl border bg-primary/5 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all focus:bg-primary/[0.07] focus:ring-2 ${
         error
             ? 'border-rose-500/50 focus:border-rose-500/50 focus:ring-rose-500/20'
             : 'border-primary/20 focus:border-indigo-500/50 focus:ring-indigo-500/20'
@@ -91,8 +91,8 @@ export default function PostEdit({ post, categories, featuredCount }) {
                         </svg>
                     </Link>
                     <div>
-                        <h2 className="text-2xl font-bold text-primary">Edit Post</h2>
-                        <p className="mt-1 text-sm text-slate-400">Updating: <span className="text-primary">{post.title}</span></p>
+                        <h2 className="text-2xl font-bold text-white">Edit Post</h2>
+                        <p className="mt-1 text-sm text-slate-400">Updating: <span className="text-white">{post.title}</span></p>
                     </div>
                 </div>
 
@@ -110,9 +110,9 @@ export default function PostEdit({ post, categories, featuredCount }) {
                                 onChange={(e) => setData('category_id', e.target.value)}
                                 className={`${inputCls(errors.category_id)} bg-slate-900`}
                             >
-                                <option value="" className="bg-slate-900 text-primary">— No category —</option>
+                                <option value="" className="bg-slate-900 text-white">— No category —</option>
                                 {categories?.map((cat) => (
-                                    <option key={cat.id} value={String(cat.id)} className="bg-slate-900 text-primary">{cat.name}</option>
+                                    <option key={cat.id} value={String(cat.id)} className="bg-slate-900 text-white">{cat.name}</option>
                                 ))}
                             </select>
                             <FieldError error={errors.category_id} />
