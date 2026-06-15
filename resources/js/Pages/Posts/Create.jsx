@@ -41,7 +41,7 @@ const StatusToggle = ({ checked, onChange }) => (
 const FieldError = ({ error }) => error ? <p className="mt-2 text-sm text-rose-400">{error}</p> : null
 
 const inputCls = (error) =>
-    `w-full rounded-xl border bg-primary/5 px-4 py-3 text-sm text-primary placeholder-slate-500 outline-none transition-all focus:bg-primary/[0.07] focus:ring-2 ${
+    `w-full rounded-xl border bg-primary/5 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all focus:bg-primary/[0.07] focus:ring-2 ${
         error
             ? 'border-rose-500/50 focus:border-rose-500/50 focus:ring-rose-500/20'
             : 'border-primary/20 focus:border-indigo-500/50 focus:ring-indigo-500/20'
@@ -85,7 +85,7 @@ export default function PostCreate({ categories, featuredCount }) {
                         </svg>
                     </Link>
                     <div>
-                        <h2 className="text-2xl font-bold text-primary">Create Post</h2>
+                        <h2 className="text-2xl font-bold text-white">Create Post</h2>
                         <p className="mt-1 text-sm text-slate-400">Add a new post to your platform</p>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ export default function PostCreate({ categories, featuredCount }) {
                             >
                                 <option value="" className="bg-slate-900 text-primary">— No category —</option>
                                 {categories?.map((cat) => (
-                                    <option key={cat.id} value={cat.id} className="bg-slate-900 text-primary">{cat.name}</option>
+                                    <option key={cat.id} value={cat.id} className="bg-slate-900 text-white">{cat.name}</option>
                                 ))}
                             </select>
                             <FieldError error={errors.category_id} />
@@ -211,7 +211,7 @@ export default function PostCreate({ categories, featuredCount }) {
                                 Cancel
                             </Link>
                             <button type="submit" disabled={processing}
-                                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-2.5 text-sm font-semibold text-primary shadow-lg shadow-indigo-500/25 transition-all hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50">
+                                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50">
                                 {processing ? (
                                     <>
                                         <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24">
