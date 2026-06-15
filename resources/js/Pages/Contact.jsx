@@ -1,13 +1,8 @@
 import React from 'react';
 import AppLayout from '../Layouts/AppLayout';
 import HeroHeader from '../Components/HeroHeader';
-import Input, { TextArea } from '../Components/FormElements';
 
 export default function Contact() {
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        alert('Your message has been sent to the Peacock team!');
-    };
 
     const contactInfo = [
         {
@@ -52,64 +47,75 @@ export default function Contact() {
                     ))}
                 </div>
 
-                {/* Main Contact Section */}
-                <section className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent blur-3xl -z-10 rounded-full"></div>
+                {/* Map Section */}
+                <section className="relative group">
+                    {/* Decorative glow behind the map */}
+                    <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 blur-3xl -z-10 rounded-[4rem] opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
 
-                    <div className="bg-[#e6b000]/80 backdrop-blur-xl border border-primary/20 rounded-[3rem] overflow-hidden shadow-[0_30px_100px_-20px_rgba(0,0,0,0.5)] flex flex-col lg:flex-row">
-
-                        {/* Form Side */}
-                        <div className="flex-1 p-10 md:p-16 space-y-12">
-                            <div className="space-y-4">
-                                <h2 className="font-48 font-black uppercase tracking-tighter">Send a <span className="text-primary italic">Message</span></h2>
-                                <p className="text-primary/70 max-w-md leading-relaxed">
-                                    Have a project in mind or just want to say hi? Fill out the form below and our team will get back to you within 24 hours.
-                                </p>
-                            </div>
-
-                            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <Input label="Full Name" placeholder="John Doe" name="name" required className="md:col-span-1" />
-                                <Input label="Email Address" type="email" placeholder="john@example.com" name="email" required className="md:col-span-1" />
-                                <Input label="Subject" placeholder="Inquiry about..." name="subject" className="md:col-span-2" />
-                                <TextArea label="Your Message" placeholder="Tell us more about your project..." name="message" required className="md:col-span-2" />
-
-                                <div className="md:col-span-2 pt-4">
-                                    <button
-                                        type="submit"
-                                        className="group relative px-12 py-5 bg-primary text-secondary font-black uppercase tracking-widest rounded-2xl overflow-hidden shadow-lg transition-all hover:shadow-[0_0_40px_rgba(255,195,0,0.4)]"
-                                    >
-                                        <span className="relative z-10 flex items-center gap-2">
-                                            Blast Off
-                                            <svg className="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                            </svg>
-                                        </span>
-                                        <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-20 transition-opacity"></div>
-                                    </button>
-                                </div>
-                            </form>
+                    <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_30px_100px_-20px_rgba(0,0,0,0.6)] border border-primary/15 hover:border-primary/30 transition-colors duration-500" style={{ height: '500px' }}>
+                        {/* Map iframe */}
+                        <div className="absolute inset-0 z-0">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d35256.8616995254!2d90.36735401775468!3d23.776032657226956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sFlat%2010E%2C%20House%2010%2C%20Road%202%2F2%2C%20Banani%2C%20DHaka-1213!5e1!3m2!1sen!2sbd!4v1780830206718!5m2!1sen!2sbd"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0, filter: 'saturate(0.8) contrast(1.1)' }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
                         </div>
 
-                        {/* Map/Visual Side */}
-                        <div className="lg:w-[400px] xl:w-[500px] bg-secondary relative overflow-hidden border-t lg:border-t-0 lg:border-l border-primary/20 min-h-[300px]">
-                            <div className="absolute inset-0 z-0">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d35256.8616995254!2d90.36735401775468!3d23.776032657226956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sFlat%2010E%2C%20House%2010%2C%20Road%202%2F2%2C%20Banani%2C%20DHaka-1213!5e1!3m2!1sen!2sbd!4v1780830206718!5m2!1sen!2sbd"
-                                    width="100%"
-                                    height="100%"
-                                    style={{ border: 0 }}
-                                    allowFullScreen=""
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                />
-                            </div>
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0f171e] to-transparent z-10 h-32 pointer-events-none"></div>
+                        {/* Bottom gradient fade */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-secondary via-secondary/80 to-transparent z-10 h-48 pointer-events-none"></div>
 
-                            <div className="absolute bottom-0 left-0 right-0 z-20 p-8 space-y-2">
-                                <div className="w-12 h-1 bg-primary"></div>
-                                <h3 className="font-20 font-black uppercase tracking-tighter">Based in <span className="text-primary italic">Dhaka, BD</span></h3>
-                                <p className="font-12 text-primary/70 font-bold uppercase tracking-widest">Flat 10E, House 10, Road 2/2, Banani</p>
+                        {/* Left gradient fade */}
+                        <div className="absolute top-0 bottom-0 left-0 bg-gradient-to-r from-secondary/60 to-transparent z-10 w-32 pointer-events-none"></div>
+
+                        {/* Location info card - glassmorphism overlay */}
+                        <div className="absolute bottom-8 left-8 z-20 map-info-card">
+                            <div className="bg-secondary/70 backdrop-blur-xl border border-primary/20 rounded-2xl p-7 space-y-4 min-w-[300px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
+                                {/* Animated accent bar */}
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-1 bg-gradient-to-r from-primary to-primary/40 rounded-full map-accent-bar"></div>
+                                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                                </div>
+
+                                <div className="space-y-1">
+                                    <h3 className="font-24 font-black uppercase tracking-tighter text-gray-700">
+                                        Based in <span className="text-primary italic">Dhaka</span>
+                                    </h3>
+                                    <p className="font-14 text-white/60 font-medium">
+                                        Flat 10E, House 10, Road 2/2, Banani
+                                    </p>
+                                    <p className="font-12 text-primary/50 font-bold uppercase tracking-widest pt-1">
+                                        Dhaka-1213, Bangladesh
+                                    </p>
+                                </div>
+
+                                {/* Get Directions link */}
+                                <a
+                                    href="https://maps.google.com/?q=Flat+10E,+House+10,+Road+2/2,+Banani,+Dhaka-1213"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-primary font-bold font-12 uppercase tracking-widest hover:gap-3 transition-all duration-300 group/link pt-1"
+                                >
+                                    <span>Get Directions</span>
+                                    <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </a>
                             </div>
+                        </div>
+
+                        {/* Decorative corner accents */}
+                        <div className="absolute top-6 right-6 z-20 flex items-center gap-2 opacity-40">
+                            <div className="w-8 h-[2px] bg-primary/60"></div>
+                            <div className="w-[2px] h-8 bg-primary/60"></div>
+                        </div>
+                        <div className="absolute top-6 left-6 z-20 flex items-center gap-2 opacity-40">
+                            <div className="w-[2px] h-8 bg-primary/60"></div>
+                            <div className="w-8 h-[2px] bg-primary/60"></div>
                         </div>
                     </div>
                 </section>
@@ -126,6 +132,20 @@ export default function Contact() {
                 }
                 .animate-pulse-slow {
                     animation: pulse-slow 8s infinite ease-in-out;
+                }
+                @keyframes slideUp {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .map-info-card {
+                    animation: slideUp 0.8s ease-out 0.3s both;
+                }
+                @keyframes accentPulse {
+                    0%, 100% { width: 2.5rem; }
+                    50% { width: 4rem; }
+                }
+                .map-accent-bar {
+                    animation: accentPulse 3s ease-in-out infinite;
                 }
             `}} />
         </AppLayout>
