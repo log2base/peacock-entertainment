@@ -34,6 +34,12 @@ export default function WhoWeAre() {
             image: "/team/Al-Amin%20Hasan-Video%20Editor.jpeg",
             socials: ['facebook', 'twitter', 'instagram']
         },
+        {
+            name: "Moaz Hasan Naif",
+            designation: "Video Editor",
+            image: "/team/Moaz%20Hasan%20Naif-Video%20editor.png",
+            socials: ['facebook', 'twitter', 'instagram']
+        },
     ];
 
     return (

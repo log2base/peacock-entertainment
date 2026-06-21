@@ -29,7 +29,7 @@ export default function About() {
 
     return (
         <AppLayout>
-            <HeroHeader 
+            <HeroHeader
                 title={<>About <span className="text-primary italic">Peacock</span></>}
                 subtitle="About Peacock Entertainment"
                 bgImage="/about_header_bg.png"
@@ -39,10 +39,10 @@ export default function About() {
                 {/* Intro Text */}
                 <div className="space-y-8 text-center md:text-left">
                     <p className="font-24 text-gray-500 leading-relaxed font-light italic border-l-0 md:border-l-4 border-primary md:pl-8">
-                        PEACOCK ENTERTAINMENT is a video and motion picture production house based in Dhaka, Bangladesh. The Company was founded in 2024 with the aim of creating world-class cinematic content. It’s an entertainment platform designed to promote arts and to provide an inside look into the lifestyles of people from different creative fields.
+                    Peacock Entertainment is a distinguished video and motion picture production house headquartered in Dhaka, Bangladesh. Established in 2023, the company was founded with a vision to deliver world‑class cinematic experiences. More than a production studio, Peacock Entertainment serves as a dynamic platform for celebrating the arts and offering audiences a window into the diverse lifestyles and creative journeys of individuals across various fields.
                     </p>
                     <p className="font-18 text-primary/70 leading-relaxed md:ml-8">
-                        We produce entertainment content for the global audience by researching the trends that resonate with fans. PEACOCK also provides promotional services for creative individuals, organizations, and companies, offering a powerful platform to showcase talent and creativity.
+                    Peacock Entertainment produces captivating content for a global audience, guided by in‑depth research into trends that truly resonate with fans. Beyond content creation, Peacock extends its expertise to promotional services for creative individuals, organizations, and companies—providing a powerful platform to showcase talent, amplify creativity, and connect with audiences worldwide.
                     </p>
                 </div>
 

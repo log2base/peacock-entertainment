@@ -10,7 +10,7 @@ export default function Footer() {
         <footer className="bg-secondary pt-32 pb-12 border-t border-primary/20">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 pb-24 text-center sm:text-left">
                 <div className="space-y-8 col-span-1 lg:col-span-1">
-                    <Logo className="scale-125 origin-left" />
+                    <Logo variant="footer" className="origin-left" />
                     <p className="text-primary/80 font-14 leading-relaxed max-w-xs font-medium">
                         PEACOCK ENTERTAINMENT is a visionary motion picture production house. We craft immersive stories that resonate globally, blending art with cutting-edge technology.
                     </p>
@@ -63,7 +63,7 @@ export default function Footer() {
                             Flat 10E, House 10, Road 2/2, Banani, Dhaka-1213
                         </p>
                         <a href="mailto:peacockentertainmentlimited@gmail.com" className="flex items-center gap-4 hover:text-primary transition-colors cursor-pointer">
-                            <span className="text-primary font-18">✉️</span>
+                            <span className="text-primary font-18 break-words">✉️</span>
                             peacockentertainmentlimited@gmail.com
                         </a>
                         <a href="tel:+8801625770071" className="flex items-center gap-4 hover:text-primary transition-colors cursor-pointer">
