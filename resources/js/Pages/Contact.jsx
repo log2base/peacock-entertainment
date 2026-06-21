@@ -20,7 +20,7 @@ export default function Contact() {
         {
             icon: "📍",
             title: "Visit Us",
-            detail: "Flat 10E, House 10, Road 2/2, Banani, Dhaka-1213",
+            detail: "Flat 10L, House 10, Road 2/2, Banani, Dhaka-1213",
             sub: "Dhaka, Bangladesh"
         }
     ];
@@ -86,7 +86,7 @@ export default function Contact() {
                                         Based in <span className="text-primary italic">Dhaka</span>
                                     </h3>
                                     <p className="font-14 text-white/60 font-medium">
-                                        Flat 10E, House 10, Road 2/2, Banani
+                                        Flat 10L, House 10, Road 2/2, Banani
                                     </p>
                                     <p className="font-12 text-primary/50 font-bold uppercase tracking-widest pt-1">
                                         Dhaka-1213, Bangladesh
