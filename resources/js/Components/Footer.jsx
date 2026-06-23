@@ -60,7 +60,7 @@ export default function Footer() {
                     <div className="space-y-6 text-primary/70 font-12 font-bold uppercase tracking-widest leading-loose">
                         <p className="flex items-start gap-4">
                             <span className="text-primary font-18">📍</span>
-                            Flat 10E, House 10, Road 2/2, Banani, Dhaka-1213
+                            Flat 10L, House 10, Road 2/2, Banani, Dhaka-1213
                         </p>
                         <a href="mailto:peacockentertainmentlimited@gmail.com" className="flex items-center gap-4 hover:text-primary transition-colors cursor-pointer">
                             <span className="text-primary font-18 break-words">✉️</span>
