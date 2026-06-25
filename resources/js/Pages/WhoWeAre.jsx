@@ -7,7 +7,7 @@ export default function WhoWeAre() {
                 {
             name: "Akash Sarkar",
             designation: "Chief Operating Officer - COO",
-            image: "/team/Akash%20Sarkar-Chief%20Operating%20Officer%20-%20COO.jpeg",
+            image: "/storage/images/Akash%20Sarkar-Chief%20Operating%20Officer%20-%20COO2.jpeg",
             socials: ['facebook', 'twitter', 'instagram']
         },
         {

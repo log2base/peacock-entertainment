@@ -9,7 +9,7 @@ export default function Footer() {
     return (
         <footer className="bg-secondary pt-32 pb-12 border-t border-primary/20">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 pb-24 text-center sm:text-left">
-                <div className="space-y-8 col-span-1 lg:col-span-1">
+                <div className="space-y-8 col-span-1 lg:col-span-1 min-w-0">
                     <Logo variant="footer" className="origin-left" />
                     <p className="text-primary/80 font-14 leading-relaxed max-w-xs font-medium">
                         PEACOCK ENTERTAINMENT is a visionary motion picture production house. We craft immersive stories that resonate globally, blending art with cutting-edge technology.
@@ -24,7 +24,7 @@ export default function Footer() {
                 </div>
 
 
-                <div className="space-y-8">
+                <div className="space-y-8 min-w-0">
                     <h4 className="font-12 font-black uppercase tracking-[0.3em] text-primary">Categories</h4>
                     <ul className="space-y-4">
                         {(categories.length > 0 ? categories.map(cat => ({
@@ -42,7 +42,7 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-8 min-w-0">
                     <h4 className="font-12 font-black uppercase tracking-[0.3em] text-primary">Quick Links</h4>
                     <ul className="space-y-4">
                         {[
@@ -55,27 +55,27 @@ export default function Footer() {
                         ))}
                     </ul>
                 </div>
-                <div className="space-y-8">
+                <div className="space-y-8 min-w-0 sm:col-span-2 lg:col-span-1">
                     <h4 className="font-12 font-black uppercase tracking-[0.3em] text-primary">Reach Us</h4>
                     <div className="space-y-6 text-primary/70 font-12 font-bold uppercase tracking-widest leading-loose">
-                        <p className="flex items-start gap-4">
-                            <span className="text-primary font-18">📍</span>
-                            Flat 10L, House 10, Road 2/2, Banani, Dhaka-1213
+                        <p className="flex items-start gap-4 min-w-0 text-left">
+                            <span className="text-primary font-18 shrink-0">📍</span>
+                            <span className="break-words">Flat 10E, House 10, Block L, Road 2/2, Banani, Dhaka-1213</span>
                         </p>
-                        <a href="mailto:peacockentertainmentlimited@gmail.com" className="flex items-center gap-4 hover:text-primary transition-colors cursor-pointer">
-                            <span className="text-primary font-18 break-words">✉️</span>
-                            peacockentertainmentlimited@gmail.com
+                        <a href="mailto:peacockentertainmentlimited@gmail.com" className="flex items-start gap-4 min-w-0 text-left normal-case tracking-normal hover:text-primary transition-colors cursor-pointer">
+                            <span className="text-primary font-18 shrink-0">✉️</span>
+                            <span className="break-all">peacockentertainmentlimited@gmail.com</span>
                         </a>
-                        <a href="tel:+8801625770071" className="flex items-center gap-4 hover:text-primary transition-colors cursor-pointer">
-                            <span className="text-primary font-18">📞</span>
-                            +880 1625-770071
+                        <a href="tel:+8801625770071" className="flex items-start gap-4 min-w-0 text-left hover:text-primary transition-colors cursor-pointer">
+                            <span className="text-primary font-18 shrink-0">📞</span>
+                            <span className="break-words">+880 1625-770071</span>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center gap-8 font-10 font-black uppercase tracking-[0.3em] text-primary/60 text-center md:text-left">
-                <p>© {new Date().getFullYear()} PEACOCK ENTERTAINMENT. BEYOND IMAGINATION.</p>
+            <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center gap-8 font-10 font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-primary/60 text-center md:text-left">
+                <p className="break-words max-w-full">© {new Date().getFullYear()} PEACOCK ENTERTAINMENT. BEYOND IMAGINATION.</p>
                 {/* <div className="flex gap-10">
                     <Link href="#" className="hover:text-primary transition-colors">Privacy</Link>
                     <Link href="#" className="hover:text-primary transition-colors">Terms</Link>
